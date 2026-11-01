@@ -1,0 +1,35 @@
+/* Design System Variables */
+:root {
+  /* Brand palette */
+  --color-primary-bg: #03140B;
+  --color-secondary-bg: #0A260A;
+  --color-surface: #071F10;
+  --color-surface-elevated: #0C2E15;
+  --color-gradient-end: #175616;
+  --color-accent-green: #32CD55;
+  --color-accent-dim: rgba(50, 205, 85, 0.14);
+  --color-accent-border: rgba(50, 205, 85, 0.28);
+  
+  /* Text hierarchy */
+  --color-primary-text: #F2F5F2;
+  --color-secondary-text: #9CB2A2; /* balanced muted gray-green */
+  --color-muted-text: #6A8272;
+  --color-border-subtle: rgba(156, 178, 162, 0.12);
+  --color-border-line: rgba(50, 205, 85, 0.18);
+
+  /* Fonts */
+  --font-serif: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing & Layout */
+  --container-max-width: 1200px;
+  --nav-height: 72px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Transitions */
+  --transition-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}

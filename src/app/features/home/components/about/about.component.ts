@@ -1,0 +1,242 @@
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { PortfolioService } from '../../../../core/services/portfolio.service';
+import { SectionHeadingComponent } from '../../../../shared/components/section-heading/section-heading.component';
+
+@Component({
+  selector: 'app-about',
+  standalone: true,
+  imports: [CommonModule, SectionHeadingComponent],
+  template: `
+    <section id="about" class="about-section">
+      <div class="about-container">
+        <app-section-heading
+          [title]="aboutData.heading"
+          eyebrow="Background & Approach">
+        </app-section-heading>
+
+        <div class="about-layout">
+          <!-- Editorial Prose -->
+          <div class="prose-column">
+            @for (p of aboutData.paragraphs; track $index) {
+              <p class="about-para" [class.lead-para]="$first">{{ p }}</p>
+            }
+
+            <div class="focus-principles">
+              <div class="principle-item">
+                <span class="principle-num">01</span>
+                <div class="principle-body">
+                  <h4>Scalable Backend Core</h4>
+                  <p>Engineering maintainable MVC structures and clean business domain services in Laravel.</p>
+                </div>
+              </div>
+
+              <div class="principle-item">
+                <span class="principle-num">02</span>
+                <div class="principle-body">
+                  <h4>Database Precision</h4>
+                  <p>Fine-tuning MySQL schemas, indexing, and complex queries for zero-bottleneck performance.</p>
+                </div>
+              </div>
+
+              <div class="principle-item">
+                <span class="principle-num">03</span>
+                <div class="principle-body">
+                  <h4>Production Reliability</h4>
+                  <p>Automating verification and deployments with robust GitHub Actions CI/CD workflows.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Metric / Snapshot Column -->
+          <div class="snapshot-column">
+            <div class="snapshot-card">
+              <h3 class="snapshot-title">Engineering Snapshot</h3>
+
+              <div class="snapshot-list">
+                @for (item of aboutData.highlights; track item.label) {
+                  <div class="snapshot-item">
+                    <span class="snapshot-label">{{ item.label }}</span>
+                    <span class="snapshot-value">{{ item.value }}</span>
+                  </div>
+                }
+              </div>
+
+              <div class="snapshot-quote">
+                <span class="quote-mark">&ldquo;</span>
+                <p>Committed to clean code, strong conventions, and pragmatic architectural decisions that hold up under real-world usage.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `,
+  styles: [`
+    .about-section {
+      padding: 5rem 1.5rem;
+      border-top: 1px solid rgba(156, 178, 162, 0.08);
+    }
+
+    .about-container {
+      max-width: var(--container-max-width);
+      margin: 0 auto;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .about-layout {
+        grid-template-columns: 1.25fr 0.85fr;
+        gap: 4.5rem;
+      }
+    }
+
+    .prose-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-para {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--color-secondary-text);
+      margin-bottom: 1.35rem;
+    }
+
+    .lead-para {
+      font-size: 1.18rem;
+      line-height: 1.6;
+      color: var(--color-primary-text);
+      font-weight: 400;
+    }
+
+    .focus-principles {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(156, 178, 162, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .principle-item {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .principle-num {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--color-accent-green);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .principle-body h4 {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-primary-text);
+      margin: 0 0 0.25rem 0;
+    }
+
+    .principle-body p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--color-secondary-text);
+      margin: 0;
+    }
+
+    /* Snapshot Column */
+    .snapshot-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .snapshot-card {
+      background: #05190e;
+      border: 1px solid rgba(50, 205, 85, 0.16);
+      border-radius: var(--radius-md);
+      padding: 2.25rem 2rem;
+      position: sticky;
+      top: calc(var(--nav-height) + 2rem);
+    }
+
+    .snapshot-title {
+      font-family: var(--font-sans);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-primary-text);
+      letter-spacing: -0.015em;
+      margin: 0 0 1.5rem 0;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(156, 178, 162, 0.1);
+    }
+
+    .snapshot-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      margin-bottom: 2rem;
+    }
+
+    .snapshot-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .snapshot-label {
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: var(--color-accent-green);
+      letter-spacing: 0.03em;
+    }
+
+    .snapshot-value {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-primary-text);
+    }
+
+    .snapshot-quote {
+      position: relative;
+      padding: 1.25rem 1.25rem 1.25rem 1.75rem;
+      background: rgba(10, 38, 10, 0.5);
+      border-left: 2px solid var(--color-accent-green);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .snapshot-quote p {
+      font-family: var(--font-serif);
+      font-size: 0.96rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--color-primary-text);
+      margin: 0;
+    }
+
+    .quote-mark {
+      position: absolute;
+      top: -0.2rem;
+      left: 0.45rem;
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--color-accent-green);
+      line-height: 1;
+      opacity: 0.35;
+    }
+  `]
+})
+export class AboutComponent {
+  private portfolioService = inject(PortfolioService);
+  aboutData = this.portfolioService.getAbout();
+}
