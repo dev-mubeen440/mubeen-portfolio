@@ -1,21 +1,26 @@
-/* Design System Variables */
+/* Design System Variables - Crisp Clean White Primary with Rich Forest-Emerald Green Secondary */
 :root {
-  /* Brand palette */
-  --color-primary-bg: #03140B;
-  --color-secondary-bg: #0A260A;
-  --color-surface: #071F10;
-  --color-surface-elevated: #0C2E15;
-  --color-gradient-end: #175616;
-  --color-accent-green: #32CD55;
-  --color-accent-dim: rgba(50, 205, 85, 0.14);
-  --color-accent-border: rgba(50, 205, 85, 0.28);
+  /* Brand palette - White / Light Primary Surface */
+  --color-primary-bg: #FFFFFF;
+  --color-secondary-bg: #F4F8F5;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #F9FBF9;
   
-  /* Text hierarchy */
-  --color-primary-text: #F2F5F2;
-  --color-secondary-text: #9CB2A2; /* balanced muted gray-green */
-  --color-muted-text: #6A8272;
-  --color-border-subtle: rgba(156, 178, 162, 0.12);
-  --color-border-line: rgba(50, 205, 85, 0.18);
+  /* Green Gradient Secondary System */
+  --color-gradient-start: #042413;
+  --color-gradient-mid: #0D4A27;
+  --color-gradient-end: #16733D;
+  --color-accent-green: #0E8345;
+  --color-accent-green-bright: #10B981;
+  --color-accent-dim: rgba(14, 131, 69, 0.08);
+  --color-accent-border: rgba(14, 131, 69, 0.22);
+  
+  /* Text hierarchy - Optimized for readability on clean white */
+  --color-primary-text: #0F172A; /* Deep slate charcoal */
+  --color-secondary-text: #475569; /* Slate gray */
+  --color-muted-text: #64748B;
+  --color-border-subtle: #E2E8F0;
+  --color-border-line: rgba(14, 131, 69, 0.25);
 
   /* Fonts */
   --font-serif: 'Inter', system-ui, -apple-system, sans-serif;
@@ -25,9 +30,14 @@
   /* Spacing & Layout */
   --container-max-width: 1200px;
   --nav-height: 72px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Shadows for clean white cards */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 12px 30px -4px rgba(15, 23, 42, 0.1), 0 4px 12px -2px rgba(15, 23, 42, 0.05);
 
   /* Transitions */
   --transition-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);

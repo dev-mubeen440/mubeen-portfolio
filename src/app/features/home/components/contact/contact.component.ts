@@ -50,7 +50,7 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
                   </svg>
                 </div>
                 <div class="channel-details">
-                  <span class="channel-label">Phone & WhatsApp</span>
+                  <span class="channel-label">Phone &amp; WhatsApp</span>
                   <span class="channel-value">{{ profile.phone }}</span>
                 </div>
                 <span class="channel-action">Call &rarr;</span>
@@ -59,7 +59,7 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
 
             <!-- Social Links Component -->
             <div class="card-socials">
-              <span class="socials-label">Social & Developer Profiles</span>
+              <span class="socials-label">Social &amp; Developer Profiles</span>
               <app-social-links
                 [githubUrl]="profile.github"
                 [linkedinUrl]="profile.linkedin"
@@ -84,7 +84,7 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
               <h4 class="loc-heading">Base of Operations</h4>
               <p class="loc-text">
                 Karachi, Pakistan (UTC+5)<br />
-                Comfortable collaborating with remote and distributed engineering teams across time zones.
+                Comfortable collaborating with remote and distributed engineering teams across global time zones.
               </p>
             </div>
 
@@ -101,9 +101,15 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
   `,
   styles: [`
     .contact-section {
-      padding: 5rem 1.5rem;
-      border-top: 1px solid rgba(156, 178, 162, 0.08);
-      background: rgba(4, 23, 12, 0.45);
+      padding: 4.5rem 1.25rem;
+      border-top: 1px solid var(--color-border-subtle);
+      background: #fafcfb;
+    }
+
+    @media (min-width: 640px) {
+      .contact-section {
+        padding: 5rem 1.5rem;
+      }
     }
 
     .contact-container {
@@ -124,23 +130,30 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
     }
 
     .contact-card {
-      background: #051a0e;
-      border: 1px solid rgba(156, 178, 162, 0.12);
+      background: #ffffff;
+      border: 1px solid var(--color-border-subtle);
       border-radius: var(--radius-md);
-      padding: 2.5rem 2rem;
+      padding: 2rem 1.5rem;
       display: flex;
       flex-direction: column;
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (min-width: 640px) {
+      .contact-card {
+        padding: 2.5rem 2rem;
+      }
     }
 
     .primary-card {
-      background: linear-gradient(135deg, #051d10 0%, #051a0e 100%);
-      border-color: rgba(50, 205, 85, 0.25);
+      border-color: rgba(14, 131, 69, 0.25);
+      box-shadow: var(--shadow-md);
     }
 
     .card-title {
       font-family: var(--font-sans);
       font-size: 1.35rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: -0.015em;
       color: var(--color-primary-text);
       margin: 0 0 0.5rem 0;
@@ -161,21 +174,29 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
 
     .channel-item {
       display: grid;
-      grid-template-columns: 44px 1fr auto;
+      grid-template-columns: 44px 1fr;
       align-items: center;
-      gap: 1.25rem;
-      background: rgba(3, 20, 11, 0.8);
-      border: 1px solid rgba(156, 178, 162, 0.12);
+      gap: 1rem;
+      background: #f8fafc;
+      border: 1px solid var(--color-border-subtle);
       padding: 1.15rem 1.25rem;
       border-radius: var(--radius-sm);
       text-decoration: none;
       transition: all var(--transition-fast);
     }
 
+    @media (min-width: 520px) {
+      .channel-item {
+        grid-template-columns: 44px 1fr auto;
+        gap: 1.25rem;
+      }
+    }
+
     .channel-item:hover {
       border-color: var(--color-accent-green);
-      background: rgba(10, 38, 10, 0.9);
+      background: #ffffff;
       transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
     }
 
     .channel-icon {
@@ -184,8 +205,8 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(50, 205, 85, 0.12);
-      border: 1px solid rgba(50, 205, 85, 0.25);
+      background: rgba(14, 131, 69, 0.1);
+      border: 1px solid rgba(14, 131, 69, 0.2);
       border-radius: var(--radius-sm);
       color: var(--color-accent-green);
     }
@@ -198,38 +219,41 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
     .channel-details {
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
+      gap: 0.15rem;
+      overflow: hidden;
     }
 
     .channel-label {
       font-size: 0.74rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--color-muted-text);
       letter-spacing: 0.03em;
+      text-transform: uppercase;
     }
 
     .channel-value {
       font-family: var(--font-mono);
       font-size: 0.95rem;
       color: var(--color-primary-text);
-      font-weight: 500;
+      font-weight: 600;
+      word-break: break-all;
     }
 
     .channel-action {
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       color: var(--color-accent-green);
-      font-weight: 600;
+      font-weight: 700;
       display: none;
     }
 
-    @media (min-width: 500px) {
+    @media (min-width: 520px) {
       .channel-action {
         display: block;
       }
     }
 
     .card-socials {
-      border-top: 1px solid rgba(156, 178, 162, 0.1);
+      border-top: 1px solid var(--color-border-subtle);
       padding-top: 1.5rem;
       margin-top: auto;
       display: flex;
@@ -238,8 +262,8 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
     }
 
     .socials-label {
-      font-size: 0.78rem;
-      font-weight: 500;
+      font-size: 0.8rem;
+      font-weight: 600;
       color: var(--color-muted-text);
     }
 
@@ -249,9 +273,9 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
       gap: 1rem;
       align-items: flex-start;
       padding: 1.25rem;
-      background: rgba(3, 20, 11, 0.6);
+      background: #f8fafc;
       border-radius: var(--radius-sm);
-      border: 1px solid rgba(156, 178, 162, 0.1);
+      border: 1px solid var(--color-border-subtle);
       margin-bottom: 1.75rem;
     }
 
@@ -260,22 +284,22 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
       height: 10px;
       border-radius: 50%;
       background: var(--color-accent-green);
-      box-shadow: 0 0 10px var(--color-accent-green);
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
       margin-top: 0.35rem;
       flex-shrink: 0;
     }
 
     .status-title {
       display: block;
-      font-size: 0.92rem;
-      font-weight: 600;
+      font-size: 0.95rem;
+      font-weight: 700;
       color: var(--color-primary-text);
       margin-bottom: 0.2rem;
     }
 
     .status-sub {
       display: block;
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       color: var(--color-secondary-text);
       line-height: 1.45;
     }
@@ -286,14 +310,14 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
 
     .loc-heading {
       font-family: var(--font-sans);
-      font-size: 0.84rem;
-      font-weight: 600;
+      font-size: 0.88rem;
+      font-weight: 700;
       color: var(--color-primary-text);
       margin: 0 0 0.5rem 0;
     }
 
     .loc-text {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       line-height: 1.6;
       color: var(--color-secondary-text);
       margin: 0;
@@ -302,16 +326,17 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
     .cta-direct-box {
       margin-top: auto;
       padding-top: 1.5rem;
-      border-top: 1px solid rgba(156, 178, 162, 0.1);
+      border-top: 1px solid var(--color-border-subtle);
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
     }
 
     .cta-prompt {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: var(--color-secondary-text);
       margin: 0;
+      font-weight: 500;
     }
   `]
 })

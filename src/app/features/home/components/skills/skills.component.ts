@@ -2,24 +2,26 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PortfolioService } from '../../../../core/services/portfolio.service';
 import { SectionHeadingComponent } from '../../../../shared/components/section-heading/section-heading.component';
+import { TechIconComponent } from '../../../../shared/components/tech-icon/tech-icon.component';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule, SectionHeadingComponent],
+  imports: [CommonModule, SectionHeadingComponent, TechIconComponent],
   template: `
     <section id="skills" class="skills-section">
       <div class="skills-container">
         <app-section-heading
           title="Technical Competencies"
-          eyebrow="Specialization & Tooling"
-          description="Structured grouping of backend architectures, engineering frameworks, datastores, and development infrastructure.">
+          eyebrow="Specialization &amp; Tooling"
+          description="Structured inventory of backend architectures, engineering frameworks, datastores, and development infrastructure with dedicated technology icons.">
         </app-section-heading>
 
         <div class="skills-grid">
           @for (cat of skillCategories; track cat.category; let i = $index) {
             <div class="skill-category-card" [class.highlight-card]="i === 0">
               <div class="card-glow" aria-hidden="true"></div>
+              
               <div class="card-top">
                 <div class="header-left">
                   <span class="category-index">0{{ i + 1 }}</span>
@@ -31,7 +33,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
               <div class="skills-tag-flow">
                 @for (skill of cat.skills; track skill) {
                   <span class="skill-tag">
-                    <span class="skill-accent-bar" aria-hidden="true"></span>
+                    <app-tech-icon [name]="skill" size="sm"></app-tech-icon>
                     <span class="skill-name">{{ skill }}</span>
                   </span>
                 }
@@ -44,9 +46,15 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
   `,
   styles: [`
     .skills-section {
-      padding: 5.5rem 1.5rem;
-      border-top: 1px solid rgba(156, 178, 162, 0.08);
-      background: rgba(4, 23, 12, 0.4);
+      padding: 4.5rem 1.25rem;
+      border-top: 1px solid var(--color-border-subtle);
+      background: #fafcfb;
+    }
+
+    @media (min-width: 640px) {
+      .skills-section {
+        padding: 5.5rem 1.5rem;
+      }
     }
 
     .skills-container {
@@ -57,7 +65,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     .skills-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1.75rem;
+      gap: 1.5rem;
     }
 
     @media (min-width: 768px) {
@@ -73,35 +81,41 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     }
 
     .skill-category-card {
-      background: #051a0e;
-      border: 1px solid rgba(156, 178, 162, 0.12);
+      background: #ffffff;
+      border: 1px solid var(--color-border-subtle);
       border-radius: var(--radius-md);
-      padding: 2.25rem 2rem;
+      padding: 1.75rem 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1.75rem;
+      gap: 1.5rem;
       transition: all var(--transition-fast);
       position: relative;
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (min-width: 640px) {
+      .skill-category-card {
+        padding: 2.25rem 2rem;
+      }
     }
 
     .skill-category-card:hover {
-      border-color: rgba(50, 205, 85, 0.4);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+      border-color: rgba(14, 131, 69, 0.4);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
     }
 
     .skill-category-card.highlight-card {
-      border-color: rgba(50, 205, 85, 0.35);
-      background: linear-gradient(150deg, #072917 0%, #051a0e 100%);
+      border-color: rgba(14, 131, 69, 0.35);
+      background: linear-gradient(150deg, #ffffff 0%, #f4fbf6 100%);
     }
 
     .card-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      border-bottom: 1px solid rgba(156, 178, 162, 0.12);
+      border-bottom: 1px solid var(--color-border-subtle);
       padding-bottom: 1.25rem;
     }
 
@@ -115,14 +129,14 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
       font-family: var(--font-mono);
       font-size: 0.8rem;
       color: var(--color-accent-green);
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.05em;
     }
 
     .category-name {
       font-family: var(--font-sans);
       font-size: 1.25rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--color-primary-text);
       letter-spacing: -0.015em;
       margin: 0;
@@ -133,54 +147,43 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
       font-family: var(--font-mono);
       font-size: 0.72rem;
       color: var(--color-muted-text);
-      background: rgba(10, 38, 10, 0.6);
+      background: #f1f5f9;
       padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      border: 1px solid rgba(156, 178, 162, 0.1);
+      border: 1px solid var(--color-border-subtle);
       white-space: nowrap;
+      font-weight: 500;
     }
 
     .skills-tag-flow {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.65rem;
+      gap: 0.6rem;
     }
 
     .skill-tag {
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
-      padding: 0.5rem 0.95rem;
-      background: rgba(10, 38, 10, 0.55);
-      border: 1px solid rgba(156, 178, 162, 0.14);
+      padding: 0.45rem 0.85rem;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
       border-radius: var(--radius-sm);
       font-size: 0.88rem;
       font-weight: 500;
-      color: #e0ece4;
+      color: #334155;
       line-height: 1.4;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
       transition: all var(--transition-fast);
       user-select: none;
     }
 
     .skill-tag:hover {
       border-color: var(--color-accent-green);
-      color: #ffffff;
-      background: rgba(23, 86, 22, 0.45);
+      color: var(--color-accent-green);
+      background: #f0fdf4;
       transform: translateY(-1px);
-    }
-
-    .skill-accent-bar {
-      width: 4px;
-      height: 12px;
-      border-radius: 2px;
-      background: var(--color-accent-green);
-      opacity: 0.65;
-      transition: opacity var(--transition-fast), transform var(--transition-fast);
-    }
-
-    .skill-tag:hover .skill-accent-bar {
-      opacity: 1;
-      transform: scaleY(1.2);
+      box-shadow: 0 4px 10px rgba(14, 131, 69, 0.12);
     }
 
     .card-glow {
@@ -189,13 +192,13 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
       right: -60px;
       width: 160px;
       height: 160px;
-      background: radial-gradient(circle, rgba(50, 205, 85, 0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(14, 131, 69, 0.08) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
     }
 
     .highlight-card .card-glow {
-      background: radial-gradient(circle, rgba(50, 205, 85, 0.14) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(14, 131, 69, 0.12) 0%, transparent 70%);
     }
   `]
 })

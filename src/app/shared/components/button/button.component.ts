@@ -1,14 +1,22 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   template: `
     <ng-template #content><ng-content></ng-content></ng-template>
 
-    @if (isExternal) {
+    @if (routerLink) {
+      <a
+        [routerLink]="routerLink"
+        [class]="buttonClasses"
+        (click)="onClick($event)">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+      </a>
+    } @else if (isExternal) {
       <a
         [href]="href"
         [target]="target"
@@ -29,7 +37,14 @@ import { CommonModule } from '@angular/common';
   `,
   styles: [`
     :host {
-      display: inline-block;
+      display: inline-flex;
+      vertical-align: middle;
+      border: none !important;
+      outline: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
     }
 
     .btn-base {
@@ -38,66 +53,73 @@ import { CommonModule } from '@angular/common';
       justify-content: center;
       gap: 0.5rem;
       font-family: var(--font-sans);
-      font-size: 0.88rem;
-      font-weight: 500;
-      letter-spacing: 0.01em;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
       border-radius: var(--radius-sm);
       cursor: pointer;
       text-decoration: none;
       transition: all var(--transition-fast);
       white-space: nowrap;
-      border: 1px solid transparent;
+      border: none;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      box-sizing: border-box;
+      line-height: 1.2;
     }
 
     .btn-md {
-      padding: 0.65rem 1.35rem;
+      padding: 0.7rem 1.4rem;
     }
 
     .btn-sm {
       padding: 0.45rem 0.95rem;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
     }
 
-    /* Primary Accent */
+    /* Primary Accent: Green Gradient */
     .btn-primary {
-      background: var(--color-accent-green);
-      color: #03140B;
-      font-weight: 600;
-      box-shadow: 0 0 20px rgba(50, 205, 85, 0.2);
+      background: linear-gradient(135deg, #0d5c31 0%, #0e8345 50%, #10b981 100%);
+      color: #ffffff !important;
+      box-shadow: 0 4px 14px rgba(14, 131, 69, 0.28);
     }
     .btn-primary:hover {
-      background: #39e35f;
+      background: linear-gradient(135deg, #0a4a27 0%, #0c743d 50%, #059669 100%);
       transform: translateY(-1px);
-      box-shadow: 0 4px 24px rgba(50, 205, 85, 0.35);
+      box-shadow: 0 6px 20px rgba(14, 131, 69, 0.38);
     }
 
-    /* Secondary / Outline */
+    /* Secondary / Clean White surface with 1px border */
     .btn-secondary {
-      background: rgba(10, 38, 10, 0.4);
-      color: var(--color-primary-text);
-      border-color: var(--color-border-subtle);
+      background: #ffffff;
+      color: var(--color-primary-text) !important;
+      border: 1px solid #cbd5e1;
+      box-shadow: var(--shadow-sm);
     }
     .btn-secondary:hover {
-      background: rgba(10, 38, 10, 0.85);
-      border-color: var(--color-border-line);
-      color: #ffffff;
+      background: #f8fafc;
+      border-color: var(--color-accent-green);
+      color: var(--color-accent-green) !important;
       transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
     }
 
-    /* Ghost / Minimal */
+    /* Ghost */
     .btn-ghost {
       background: transparent;
-      color: var(--color-secondary-text);
-      border-color: transparent;
+      color: var(--color-secondary-text) !important;
+      border: none;
       padding-left: 0.5rem;
       padding-right: 0.5rem;
     }
     .btn-ghost:hover {
-      color: var(--color-primary-text);
+      color: var(--color-accent-green) !important;
     }
   `]
 })
 export class ButtonComponent {
+  @Input() routerLink: string | any[] | null = null;
   @Input() href: string | null = null;
   @Input() target: string = '_self';
   @Input() variant: 'primary' | 'secondary' | 'ghost' = 'primary';

@@ -36,8 +36,14 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
   `,
   styles: [`
     .education-section {
-      padding: 5.5rem 1.5rem;
-      border-top: 1px solid rgba(156, 178, 162, 0.08);
+      padding: 4.5rem 1.25rem;
+      border-top: 1px solid var(--color-border-subtle);
+    }
+
+    @media (min-width: 640px) {
+      .education-section {
+        padding: 5.5rem 1.5rem;
+      }
     }
 
     .education-container {
@@ -48,7 +54,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     .education-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1.75rem;
+      gap: 1.5rem;
     }
 
     @media (min-width: 800px) {
@@ -58,59 +64,65 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     }
 
     .education-card {
-      background: #051a0e;
-      border: 1px solid rgba(156, 178, 162, 0.12);
+      background: #ffffff;
+      border: 1px solid var(--color-border-subtle);
       border-radius: var(--radius-md);
       overflow: hidden;
       display: flex;
       flex-direction: column;
       position: relative;
+      box-shadow: var(--shadow-sm);
       transition: all var(--transition-fast);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
     }
 
     .education-card:hover {
-      border-color: rgba(50, 205, 85, 0.35);
+      border-color: rgba(14, 131, 69, 0.4);
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      box-shadow: var(--shadow-md);
     }
 
     .education-card.primary-degree {
-      background: linear-gradient(145deg, #072515 0%, #051a0e 100%);
-      border-color: rgba(50, 205, 85, 0.32);
+      border-color: rgba(14, 131, 69, 0.3);
+      box-shadow: var(--shadow-md);
     }
 
     .card-edge {
-      height: 3px;
+      height: 4px;
       width: 100%;
-      background: rgba(156, 178, 162, 0.2);
+      background: #e2e8f0;
     }
 
     .primary-degree .card-edge {
-      background: var(--color-accent-green);
+      background: linear-gradient(90deg, #0d5c31 0%, #0e8345 50%, #10b981 100%);
     }
 
     .card-content {
-      padding: 2.25rem 2rem;
+      padding: 1.75rem 1.5rem;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
       gap: 0.65rem;
     }
 
+    @media (min-width: 640px) {
+      .card-content {
+        padding: 2.25rem 2rem;
+      }
+    }
+
     .edu-level {
       font-family: var(--font-mono);
       font-size: 0.8rem;
       color: var(--color-accent-green);
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.05em;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.25rem;
     }
 
     .degree-title {
       font-family: var(--font-sans);
       font-size: 1.25rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--color-primary-text);
       line-height: 1.45;
       letter-spacing: -0.015em;
@@ -120,7 +132,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     .institution-name {
       font-size: 0.95rem;
       color: var(--color-secondary-text);
-      line-height: 1.65;
+      line-height: 1.6;
       margin-bottom: 1.25rem;
     }
 
@@ -129,10 +141,10 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
       margin-top: auto;
       font-family: var(--font-mono);
       font-size: 0.78rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--color-accent-green);
-      background: rgba(50, 205, 85, 0.12);
-      border: 1px solid rgba(50, 205, 85, 0.25);
+      background: rgba(14, 131, 69, 0.08);
+      border: 1px solid rgba(14, 131, 69, 0.2);
       padding: 0.35rem 0.8rem;
       border-radius: 999px;
       width: fit-content;

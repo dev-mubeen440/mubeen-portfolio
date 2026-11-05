@@ -30,19 +30,20 @@ import { CommonModule } from '@angular/common';
 
     .eyebrow {
       display: inline-block;
-      font-family: var(--font-sans);
-      font-size: 0.82rem;
-      font-weight: 500;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
       color: var(--color-accent-green);
-      letter-spacing: 0.04em;
-      margin-bottom: 0.5rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
     }
 
     .title {
       font-family: var(--font-sans);
-      font-size: clamp(2rem, 3.5vw, 2.75rem);
-      font-weight: 700;
-      line-height: 1.25;
+      font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.22;
       letter-spacing: -0.025em;
       color: var(--color-primary-text);
       margin: 0 0 0.85rem 0;
@@ -50,7 +51,7 @@ import { CommonModule } from '@angular/common';
 
     .description {
       font-size: 1.05rem;
-      line-height: 1.6;
+      line-height: 1.65;
       color: var(--color-secondary-text);
       margin: 0;
     }

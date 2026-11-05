@@ -52,7 +52,7 @@ import { CommonModule } from '@angular/common';
     .social-group {
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.65rem;
       flex-wrap: wrap;
     }
 
@@ -65,28 +65,30 @@ import { CommonModule } from '@angular/common';
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.5rem 0.9rem;
+      padding: 0.5rem 0.95rem;
       border-radius: var(--radius-sm);
-      background: rgba(10, 38, 10, 0.45);
-      border: 1px solid rgba(156, 178, 162, 0.12);
+      background: #ffffff;
+      border: 1px solid var(--color-border-subtle);
       color: var(--color-secondary-text);
       font-size: 0.85rem;
       font-family: var(--font-sans);
       font-weight: 500;
       text-decoration: none;
+      box-shadow: var(--shadow-sm);
       transition: all var(--transition-fast);
     }
 
     .social-btn:hover {
-      background: rgba(23, 86, 22, 0.4);
-      border-color: var(--color-border-line);
-      color: var(--color-primary-text);
+      background: #f8fafc;
+      border-color: var(--color-accent-green);
+      color: var(--color-accent-green);
       transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
     }
 
     .icon {
-      width: 16px;
-      height: 16px;
+      width: 15px;
+      height: 15px;
     }
 
     .label {

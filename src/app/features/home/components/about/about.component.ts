@@ -75,8 +75,14 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
   `,
   styles: [`
     .about-section {
-      padding: 5rem 1.5rem;
-      border-top: 1px solid rgba(156, 178, 162, 0.08);
+      padding: 4.5rem 1.25rem;
+      border-top: 1px solid var(--color-border-subtle);
+    }
+
+    @media (min-width: 640px) {
+      .about-section {
+        padding: 5rem 1.5rem;
+      }
     }
 
     .about-container {
@@ -87,7 +93,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     .about-layout {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 3.5rem;
+      gap: 3rem;
     }
 
     @media (min-width: 900px) {
@@ -113,13 +119,13 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
       font-size: 1.18rem;
       line-height: 1.6;
       color: var(--color-primary-text);
-      font-weight: 400;
+      font-weight: 500;
     }
 
     .focus-principles {
       margin-top: 2rem;
       padding-top: 2rem;
-      border-top: 1px solid rgba(156, 178, 162, 0.12);
+      border-top: 1px solid var(--color-border-subtle);
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
@@ -133,24 +139,24 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     }
 
     .principle-num {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
       color: var(--color-accent-green);
-      font-weight: 600;
+      font-weight: 700;
       line-height: 1.2;
     }
 
     .principle-body h4 {
       font-family: var(--font-sans);
-      font-size: 1rem;
-      font-weight: 600;
+      font-size: 1.05rem;
+      font-weight: 700;
       color: var(--color-primary-text);
       margin: 0 0 0.25rem 0;
     }
 
     .principle-body p {
-      font-size: 0.9rem;
-      line-height: 1.5;
+      font-size: 0.92rem;
+      line-height: 1.55;
       color: var(--color-secondary-text);
       margin: 0;
     }
@@ -162,10 +168,11 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     }
 
     .snapshot-card {
-      background: #05190e;
-      border: 1px solid rgba(50, 205, 85, 0.16);
+      background: #ffffff;
+      border: 1px solid var(--color-border-subtle);
       border-radius: var(--radius-md);
       padding: 2.25rem 2rem;
+      box-shadow: var(--shadow-md);
       position: sticky;
       top: calc(var(--nav-height) + 2rem);
     }
@@ -173,12 +180,12 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     .snapshot-title {
       font-family: var(--font-sans);
       font-size: 1.25rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--color-primary-text);
       letter-spacing: -0.015em;
       margin: 0 0 1.5rem 0;
       padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(156, 178, 162, 0.1);
+      border-bottom: 1px solid var(--color-border-subtle);
     }
 
     .snapshot-list {
@@ -196,31 +203,31 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
 
     .snapshot-label {
       font-size: 0.76rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--color-accent-green);
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     .snapshot-value {
-      font-size: 0.95rem;
-      font-weight: 500;
+      font-size: 0.98rem;
+      font-weight: 600;
       color: var(--color-primary-text);
     }
 
     .snapshot-quote {
       position: relative;
       padding: 1.25rem 1.25rem 1.25rem 1.75rem;
-      background: rgba(10, 38, 10, 0.5);
-      border-left: 2px solid var(--color-accent-green);
+      background: #f8fafc;
+      border-left: 3px solid var(--color-accent-green);
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     }
 
     .snapshot-quote p {
-      font-family: var(--font-serif);
-      font-size: 0.96rem;
+      font-size: 0.94rem;
       font-style: italic;
       line-height: 1.6;
-      color: var(--color-primary-text);
+      color: var(--color-secondary-text);
       margin: 0;
     }
 
@@ -232,7 +239,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
       font-size: 2rem;
       color: var(--color-accent-green);
       line-height: 1;
-      opacity: 0.35;
+      opacity: 0.4;
     }
   `]
 })

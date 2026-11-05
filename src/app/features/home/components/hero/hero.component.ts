@@ -1,53 +1,55 @@
-import { Component, inject } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { PortfolioService } from '../../../../core/services/portfolio.service';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { SocialLinksComponent } from '../../../../shared/components/social-links/social-links.component';
+import gsap from 'gsap';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, SocialLinksComponent],
+  imports: [CommonModule, RouterModule, ButtonComponent, SocialLinksComponent],
   preserveWhitespaces: true,
   template: `
     <section id="hero" class="hero-section">
       <div class="hero-grid">
         <!-- Main Editorial Column -->
         <div class="hero-content">
-          <div class="hero-kicker">
+          <div class="hero-kicker gsap-fade">
             <span class="status-dot"></span>
-            <span class="kicker-text">Karachi, Pakistan &middot; Open to Opportunities</span>
+            <span class="kicker-text">Karachi, PK &middot; Open to Opportunities</span>
           </div>
 
           <h1 class="hero-title">
-            <span class="name-block">Mubeen Aslam</span>
-            <span class="role-block">PHP Laravel Developer</span>
+            <span class="name-block gsap-title-name">Mubeen Aslam</span>
+            <span class="role-block gsap-title-role">PHP Laravel Developer</span>
           </h1>
 
-          <p class="hero-intro">
+          <p class="hero-intro gsap-fade">
             Building scalable web applications, reliable backend systems, and meaningful digital experiences.
           </p>
 
-          <p class="hero-supporting">
+          <p class="hero-supporting gsap-fade">
             Software Engineer specializing in PHP and Laravel, with experience building production applications, REST APIs, CRM systems, and database-driven platforms.
           </p>
 
-          <!-- Action Buttons -->
-          <div class="hero-actions">
-            <app-button href="#projects" variant="primary">
-              View My Work
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Action Buttons (Mobile-first stack) -->
+          <div class="hero-actions gsap-fade">
+            <app-button routerLink="/projects" variant="primary" class="hero-action-btn">
+              View Selected Work
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M7 17L17 7"></path>
                 <path d="M7 7h10v10"></path>
               </svg>
             </app-button>
 
-            <app-button href="#contact" variant="secondary">
+            <app-button routerLink="/contact" variant="secondary" class="hero-action-btn">
               Contact Me
             </app-button>
 
-            <button type="button" class="cv-download-btn" (click)="handleDownloadCv()">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <button type="button" class="cv-download-btn hero-action-btn" (click)="handleDownloadCv()">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="7 10 12 15 17 10"></polyline>
                 <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -57,7 +59,7 @@ import { SocialLinksComponent } from '../../../../shared/components/social-links
           </div>
 
           <!-- Socials + Direct Contact Line -->
-          <div class="hero-meta">
+          <div class="hero-meta gsap-fade">
             <app-social-links 
               [githubUrl]="profile.github" 
               [linkedinUrl]="profile.linkedin" 
@@ -82,8 +84,8 @@ import { SocialLinksComponent } from '../../../../shared/components/social-links
           </div>
         </div>
 
-        <!-- Technical Identity Visual Panel (Asymmetrical editorial card, not generic stock illustration) -->
-        <div class="hero-tech-card" aria-hidden="true">
+        <!-- Technical Identity Visual Panel (Responsive on small screens) -->
+        <div class="hero-tech-card gsap-card" aria-hidden="true">
           <div class="tech-card-header">
             <span class="file-tag">backend-core.php</span>
             <span class="status-indicator">production-ready</span>
@@ -99,6 +101,7 @@ import { SocialLinksComponent } from '../../../../shared/components/social-links
             <div class="code-line indent-1"><span class="c-keyword">protected array</span> <span class="c-var">$stack</span> = [</div>
             <div class="code-line indent-2"><span class="c-str">'framework'</span>&nbsp;<span class="c-op">=></span> <span class="c-val">'Laravel 11 / PHP 8.3'</span>,</div>
             <div class="code-line indent-2"><span class="c-str">'database'</span>&nbsp;&nbsp;<span class="c-op">=></span> <span class="c-val">'MySQL / PostgreSQL / Redis'</span>,</div>
+            <div class="code-line indent-2"><span class="c-str">'domain'</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-op">=></span> <span class="c-val">'https://mubeen.site'</span>,</div>
             <div class="code-line indent-2"><span class="c-str">'pipelines'</span>&nbsp;<span class="c-op">=></span> <span class="c-val">'GitHub Actions CI/CD'</span>,</div>
             <div class="code-line indent-2"><span class="c-str">'security'</span>&nbsp;&nbsp;<span class="c-op">=></span> <span class="c-val">'Sanctum RBAC &amp; Auth'</span>,</div>
             <div class="code-line indent-1">];</div>
@@ -128,15 +131,21 @@ import { SocialLinksComponent } from '../../../../shared/components/social-links
       min-height: calc(100vh - var(--nav-height));
       display: flex;
       align-items: center;
-      padding: 4.5rem 1.5rem 5rem;
+      padding: 2.25rem 1rem 3.5rem;
       max-width: var(--container-max-width);
       margin: 0 auto;
+    }
+
+    @media (min-width: 640px) {
+      .hero-section {
+        padding: 4.5rem 1.5rem 5rem;
+      }
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 3.5rem;
+      gap: 2.5rem;
       align-items: center;
       width: 100%;
     }
@@ -156,46 +165,47 @@ import { SocialLinksComponent } from '../../../../shared/components/social-links
     .hero-kicker {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
-      background: rgba(10, 38, 10, 0.6);
+      gap: 0.5rem;
+      background: #f8fafc;
       border: 1px solid var(--color-border-subtle);
       border-radius: 999px;
-      padding: 0.35rem 0.95rem;
+      padding: 0.3rem 0.85rem;
       width: fit-content;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm);
     }
 
     .status-dot {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--color-accent-green);
-      box-shadow: 0 0 10px var(--color-accent-green);
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
       animation: pulseGlow 2.5s infinite;
     }
 
     @keyframes pulseGlow {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.45; transform: scale(0.85); }
+      50% { opacity: 0.5; transform: scale(0.85); }
     }
 
     .kicker-text {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--color-secondary-text);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .hero-title {
       display: flex;
       flex-direction: column;
-      gap: 0.35rem;
-      margin: 0 0 1.5rem 0;
+      gap: 0.2rem;
+      margin: 0 0 1rem 0;
       line-height: 1.12;
     }
 
     .name-block {
       font-family: var(--font-sans);
-      font-size: clamp(2.6rem, 5.2vw, 4.25rem);
+      font-size: clamp(2.2rem, 5vw, 4.25rem);
       font-weight: 800;
       letter-spacing: -0.035em;
       color: var(--color-primary-text);
@@ -203,74 +213,97 @@ import { SocialLinksComponent } from '../../../../shared/components/social-links
 
     .role-block {
       font-family: var(--font-sans);
-      font-size: clamp(1.4rem, 2.8vw, 2.2rem);
-      font-weight: 600;
-      color: var(--color-accent-green);
+      font-size: clamp(1.25rem, 2.7vw, 2.15rem);
+      font-weight: 700;
+      background: linear-gradient(135deg, #0d5c31 0%, #0e8345 50%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       letter-spacing: -0.02em;
-      opacity: 0.95;
     }
 
     .hero-intro {
-      font-size: clamp(1.15rem, 1.8vw, 1.35rem);
-      line-height: 1.5;
-      font-weight: 400;
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      line-height: 1.55;
+      font-weight: 500;
       color: var(--color-primary-text);
-      margin-bottom: 1.1rem;
+      margin-bottom: 0.85rem;
       max-width: 620px;
     }
 
     .hero-supporting {
-      font-size: 0.98rem;
+      font-size: 0.94rem;
       line-height: 1.65;
       color: var(--color-secondary-text);
-      margin-bottom: 2.25rem;
+      margin-bottom: 1.75rem;
       max-width: 580px;
     }
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.85rem;
-      margin-bottom: 2.5rem;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+
+    @media (min-width: 520px) {
+      .hero-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        width: auto;
+      }
+    }
+
+    .hero-action-btn {
+      width: 100%;
+    }
+
+    @media (min-width: 520px) {
+      .hero-action-btn {
+        width: auto;
+      }
     }
 
     .cv-download-btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
-      background: rgba(10, 38, 10, 0.4);
+      background: #ffffff;
       border: 1px solid var(--color-border-subtle);
       color: var(--color-primary-text);
       font-family: var(--font-sans);
-      font-size: 0.88rem;
-      font-weight: 500;
-      padding: 0.65rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.7rem 1.3rem;
       border-radius: var(--radius-sm);
       cursor: pointer;
+      box-shadow: var(--shadow-sm);
       transition: all var(--transition-fast);
     }
 
     .cv-download-btn:hover {
-      background: rgba(23, 86, 22, 0.35);
+      background: #f8fafc;
       border-color: var(--color-accent-green);
-      color: #ffffff;
+      color: var(--color-accent-green);
       transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
     }
 
     .hero-meta {
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(156, 178, 162, 0.1);
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--color-border-subtle);
     }
 
     .direct-contact-tags {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.55rem;
       font-size: 0.8rem;
       color: var(--color-secondary-text);
     }
@@ -281,89 +314,118 @@ import { SocialLinksComponent } from '../../../../shared/components/social-links
       gap: 0.4rem;
       color: var(--color-secondary-text);
       text-decoration: none;
-      background: rgba(10, 38, 10, 0.3);
-      padding: 0.3rem 0.65rem;
+      background: #f8fafc;
+      padding: 0.35rem 0.75rem;
       border-radius: var(--radius-sm);
-      border: 1px solid rgba(156, 178, 162, 0.08);
-      transition: color var(--transition-fast);
+      border: 1px solid var(--color-border-subtle);
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-sm);
     }
 
     .contact-tag:hover {
       color: var(--color-accent-green);
-      border-color: var(--color-border-line);
+      border-color: var(--color-accent-green);
     }
 
     /* Technical visual card */
     .hero-tech-card {
-      background: #051a0e;
-      border: 1px solid rgba(50, 205, 85, 0.2);
+      background: #ffffff;
+      border: 1px solid rgba(14, 131, 69, 0.2);
       border-radius: var(--radius-md);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 35px rgba(23, 86, 22, 0.2);
+      box-shadow: var(--shadow-lg), 0 0 20px rgba(14, 131, 69, 0.08);
       overflow: hidden;
       font-family: var(--font-mono);
-      font-size: 0.82rem;
+      font-size: 0.78rem;
+      transform-origin: center;
+    }
+
+    @media (min-width: 640px) {
+      .hero-tech-card {
+        font-size: 0.82rem;
+      }
     }
 
     .tech-card-header {
-      background: #03140b;
-      padding: 0.75rem 1.25rem;
+      background: linear-gradient(135deg, #072e18 0%, #0d4a27 100%);
+      padding: 0.75rem 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(156, 178, 162, 0.12);
+      border-bottom: 1px solid rgba(14, 131, 69, 0.2);
+    }
+
+    @media (min-width: 640px) {
+      .tech-card-header {
+        padding: 0.85rem 1.25rem;
+      }
     }
 
     .file-tag {
-      color: var(--color-primary-text);
-      font-weight: 500;
+      color: #ffffff;
+      font-weight: 600;
     }
 
     .status-indicator {
-      font-size: 0.72rem;
-      color: var(--color-accent-green);
-      background: rgba(50, 205, 85, 0.12);
-      padding: 0.2rem 0.55rem;
+      font-size: 0.7rem;
+      color: #a7f3d0;
+      background: rgba(16, 185, 129, 0.2);
+      padding: 0.15rem 0.55rem;
       border-radius: 999px;
-      border: 1px solid rgba(50, 205, 85, 0.25);
+      border: 1px solid rgba(16, 185, 129, 0.3);
     }
 
     .tech-code-block {
-      padding: 1.5rem 1.25rem;
-      line-height: 1.7;
-      color: #9cb2a2;
+      padding: 1.25rem 1rem;
+      line-height: 1.65;
+      color: #334155;
+      background: #fafcfb;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    @media (min-width: 640px) {
+      .tech-code-block {
+        padding: 1.5rem 1.25rem;
+        line-height: 1.7;
+      }
     }
 
     .code-line {
       white-space: pre;
     }
     .code-line.empty {
-      height: 0.75rem;
+      height: 0.65rem;
     }
-    .indent-1 { padding-left: 1.25rem; }
-    .indent-2 { padding-left: 2.5rem; }
+    .indent-1 { padding-left: 1rem; }
+    .indent-2 { padding-left: 2rem; }
 
-    .c-keyword { color: #f28b82; font-weight: 600; }
-    .c-scope { color: #e8eaed; }
-    .c-class { color: #fdd663; font-weight: 600; }
-    .c-interface { color: #81c995; }
-    .c-trait { color: #8ab4f8; }
-    .c-doc { color: #5f7a69; font-style: italic; }
-    .c-var { color: #8ab4f8; }
-    .c-str { color: #a8dab5; }
-    .c-val { color: #81c995; }
-    .c-func { color: #78d9ec; }
-    .c-op { color: #f28b82; font-weight: 600; }
-    .c-type { color: #fdd663; }
+    .c-keyword { color: #dc2626; font-weight: 600; }
+    .c-scope { color: #0f172a; }
+    .c-class { color: #d97706; font-weight: 600; }
+    .c-interface { color: #059669; }
+    .c-trait { color: #2563eb; }
+    .c-doc { color: #64748b; font-style: italic; }
+    .c-var { color: #2563eb; }
+    .c-str { color: #059669; }
+    .c-val { color: #047857; font-weight: 500; }
+    .c-func { color: #0284c7; }
+    .c-op { color: #dc2626; font-weight: 600; }
+    .c-type { color: #d97706; }
 
     .tech-card-footer {
-      background: #03140b;
-      padding: 0.85rem 1.25rem;
-      border-top: 1px solid rgba(156, 178, 162, 0.1);
+      background: #f1f5f9;
+      padding: 0.85rem 1rem;
+      border-top: 1px solid var(--color-border-subtle);
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.4rem;
       font-family: var(--font-sans);
+    }
+
+    @media (min-width: 640px) {
+      .tech-card-footer {
+        padding: 0.95rem 1.25rem;
+      }
     }
 
     .stat-pill {
@@ -380,16 +442,46 @@ import { SocialLinksComponent } from '../../../../shared/components/social-links
 
     .stat-val {
       color: var(--color-primary-text);
-      font-weight: 600;
+      font-weight: 700;
     }
   `]
 })
-export class HeroComponent {
+export class HeroComponent implements AfterViewInit {
+  private el = inject(ElementRef);
   private portfolioService = inject(PortfolioService);
   profile = this.portfolioService.profile;
 
+  ngAfterViewInit() {
+    if (typeof window !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const container = this.el.nativeElement;
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      tl.from(container.querySelector('.gsap-title-name'), {
+        y: 35,
+        opacity: 0,
+        duration: 0.8
+      })
+      .from(container.querySelector('.gsap-title-role'), {
+        y: 25,
+        opacity: 0,
+        duration: 0.7
+      }, '-=0.5')
+      .from(container.querySelectorAll('.gsap-fade'), {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.12
+      }, '-=0.4')
+      .from(container.querySelector('.gsap-card'), {
+        x: 30,
+        opacity: 0,
+        scale: 0.96,
+        duration: 0.85
+      }, '-=0.6');
+    }
+  }
+
   handleDownloadCv() {
-    // Directly download verified CV file
     const link = document.createElement('a');
     link.href = this.profile.cvPath;
     link.download = 'Mubeen_Aslam_Resume.pdf';

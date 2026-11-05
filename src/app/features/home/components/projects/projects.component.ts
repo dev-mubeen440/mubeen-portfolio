@@ -88,8 +88,14 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
   `,
   styles: [`
     .projects-section {
-      padding: 5rem 1.5rem;
-      border-top: 1px solid rgba(156, 178, 162, 0.08);
+      padding: 4.5rem 1.25rem;
+      border-top: 1px solid var(--color-border-subtle);
+    }
+
+    @media (min-width: 640px) {
+      .projects-section {
+        padding: 5rem 1.5rem;
+      }
     }
 
     .projects-container {
@@ -100,7 +106,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2.25rem;
+      gap: 2rem;
     }
 
     @media (min-width: 900px) {
@@ -110,19 +116,26 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     }
 
     .project-card {
-      background: #051a0e;
-      border: 1px solid rgba(156, 178, 162, 0.12);
+      background: #ffffff;
+      border: 1px solid var(--color-border-subtle);
       border-radius: var(--radius-md);
-      padding: 2.25rem 2rem;
+      padding: 1.75rem 1.5rem;
       display: flex;
       flex-direction: column;
+      box-shadow: var(--shadow-sm);
       transition: all var(--transition-fast);
       position: relative;
     }
 
+    @media (min-width: 640px) {
+      .project-card {
+        padding: 2.25rem 2rem;
+      }
+    }
+
     .project-card:hover {
-      border-color: rgba(50, 205, 85, 0.35);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+      border-color: rgba(14, 131, 69, 0.4);
+      box-shadow: var(--shadow-md);
       transform: translateY(-2px);
     }
 
@@ -130,8 +143,8 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
       @media (min-width: 900px) {
         grid-column: 1 / -1;
       }
-      background: linear-gradient(135deg, #051c0f 0%, #04160c 100%);
-      border-color: rgba(50, 205, 85, 0.22);
+      background: linear-gradient(135deg, #ffffff 0%, #f7fbf8 100%);
+      border-color: rgba(14, 131, 69, 0.25);
     }
 
     .card-header {
@@ -142,23 +155,24 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     }
 
     .proj-category {
-      font-size: 0.78rem;
-      font-weight: 600;
+      font-size: 0.8rem;
+      font-weight: 700;
       color: var(--color-accent-green);
       letter-spacing: 0.02em;
+      text-transform: uppercase;
     }
 
     .proj-counter {
       font-family: var(--font-mono);
       font-size: 0.85rem;
       color: var(--color-muted-text);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .proj-name {
       font-family: var(--font-sans);
       font-size: 1.45rem;
-      font-weight: 700;
+      font-weight: 800;
       line-height: 1.3;
       letter-spacing: -0.015em;
       color: var(--color-primary-text);
@@ -181,26 +195,29 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
 
     .tech-pill {
       font-family: var(--font-mono);
-      font-size: 0.76rem;
-      background: rgba(10, 38, 10, 0.6);
-      color: #b5c7bb;
+      font-size: 0.78rem;
+      background: #f1f5f9;
+      color: #334155;
       padding: 0.25rem 0.65rem;
       border-radius: var(--radius-sm);
-      border: 1px solid rgba(156, 178, 162, 0.1);
+      border: 1px solid var(--color-border-subtle);
+      font-weight: 500;
     }
 
     .contributions-block {
-      border-top: 1px solid rgba(156, 178, 162, 0.1);
+      border-top: 1px solid var(--color-border-subtle);
       padding-top: 1.25rem;
       margin-top: auto;
     }
 
     .contributions-title {
       font-family: var(--font-sans);
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 0.82rem;
+      font-weight: 700;
       color: var(--color-primary-text);
       margin: 0 0 0.75rem 0;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
     }
 
     .contributions-list {
@@ -216,53 +233,63 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
       display: flex;
       gap: 0.6rem;
       align-items: baseline;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       line-height: 1.5;
       color: var(--color-secondary-text);
     }
 
     .check-icon {
       color: var(--color-accent-green);
-      font-size: 0.65rem;
+      font-size: 0.75rem;
     }
 
     /* Live sites grid for CMS Websites */
     .live-sites-panel {
       margin-top: 2rem;
       padding-top: 1.5rem;
-      border-top: 1px solid rgba(50, 205, 85, 0.2);
+      border-top: 1px solid rgba(14, 131, 69, 0.2);
     }
 
     .sites-title {
       font-family: var(--font-sans);
-      font-size: 0.82rem;
-      font-weight: 600;
+      font-size: 0.84rem;
+      font-weight: 700;
       color: var(--color-accent-green);
       margin: 0 0 1rem 0;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
     }
 
     .sites-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: 1fr;
       gap: 0.85rem;
     }
 
+    @media (min-width: 540px) {
+      .sites-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      }
+    }
+
     .site-chip {
-      background: rgba(3, 20, 11, 0.8);
-      border: 1px solid rgba(156, 178, 162, 0.15);
+      background: #ffffff;
+      border: 1px solid var(--color-border-subtle);
       border-radius: var(--radius-sm);
       padding: 0.85rem 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       text-decoration: none;
+      box-shadow: var(--shadow-sm);
       transition: all var(--transition-fast);
     }
 
     .site-chip:hover {
-      background: rgba(10, 38, 10, 0.9);
+      background: #f8fafc;
       border-color: var(--color-accent-green);
       transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
     }
 
     .site-chip-info {
@@ -272,8 +299,8 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     }
 
     .site-title {
-      font-weight: 600;
-      font-size: 0.92rem;
+      font-weight: 700;
+      font-size: 0.94rem;
       color: var(--color-primary-text);
     }
 
@@ -291,11 +318,12 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
 
     .volunteer-tag {
       font-size: 0.68rem;
-      background: rgba(50, 205, 85, 0.14);
+      background: rgba(14, 131, 69, 0.1);
       color: var(--color-accent-green);
       padding: 0.15rem 0.45rem;
       border-radius: 999px;
       white-space: nowrap;
+      font-weight: 600;
     }
 
     .external-icon {
