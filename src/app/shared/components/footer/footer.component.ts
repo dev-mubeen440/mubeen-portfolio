@@ -25,12 +25,12 @@ import { RouterModule } from '@angular/router';
               </div>
             </div>
             <p class="brand-tagline">
-              Engineering reliable distributed backends, RESTful APIs, and performant databases based in Karachi, Pakistan.
+              Software Engineer building reliable web applications, REST APIs, and database-driven solutions.
             </p>
           </div>
 
           <div class="footer-actions">
-            <a routerLink="/contact" class="footer-cta-btn">
+            <a href="#contact" class="footer-cta-btn" (click)="scrollTo($event, 'contact')">
               <span>Let's Discuss a Project</span>
               &rarr;
             </a>
@@ -46,14 +46,15 @@ import { RouterModule } from '@angular/router';
         <!-- Middle Row: Navigation Links Grid -->
         <div class="footer-grid">
           <div class="grid-col">
-            <span class="col-title">Portfolio SPA</span>
+            <span class="col-title">Navigation</span>
             <ul class="col-links">
-              <li><a routerLink="/">Home Overview</a></li>
-              <li><a routerLink="/about">About &amp; Principles</a></li>
-              <li><a routerLink="/experience">Career Experience</a></li>
-              <li><a routerLink="/projects">Delivered Projects</a></li>
-              <li><a routerLink="/skills">Technical Skills</a></li>
-              <li><a routerLink="/contact">Contact Channels</a></li>
+              <li><a href="#hero" (click)="scrollTo($event, 'hero')">Top / Overview</a></li>
+              <li><a href="#about" (click)="scrollTo($event, 'about')">About &amp; Principles</a></li>
+              <li><a href="#experience" (click)="scrollTo($event, 'experience')">Career Experience</a></li>
+              <li><a href="#projects" (click)="scrollTo($event, 'projects')">Delivered Projects</a></li>
+              <li><a href="#skills" (click)="scrollTo($event, 'skills')">Technical Skills</a></li>
+              <li><a href="#education" (click)="scrollTo($event, 'education')">Education</a></li>
+              <li><a href="#contact" (click)="scrollTo($event, 'contact')">Contact Channels</a></li>
             </ul>
           </div>
 
@@ -97,7 +98,6 @@ import { RouterModule } from '@angular/router';
               <p class="status-desc">
                 Currently engaged as Software Engineer at QSoft. Available for technical consultations and opportunities.
               </p>
-              <span class="domain-badge">Domain: https://mubeen.site</span>
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@ import { RouterModule } from '@angular/router';
         <!-- Bottom Row: Copyright & Location -->
         <div class="footer-bottom">
           <p class="copyright">
-            &copy; {{ currentYear }} Mubeen Aslam. Built with Angular &amp; Clean Architecture.
+            &copy; {{ currentYear }} Mubeen Aslam. All rights reserved.
           </p>
           <div class="footer-meta">
             <span class="location-badge">
@@ -113,7 +113,7 @@ import { RouterModule } from '@angular/router';
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
-              <span>Karachi, PK (UTC+5)</span>
+              <span>Karachi, PK</span>
             </span>
           </div>
         </div>
@@ -427,6 +427,18 @@ export class FooterComponent {
   currentYear = new Date().getFullYear();
 
   scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  scrollTo(event: MouseEvent, targetId: string) {
+    event.preventDefault();
+    if (typeof document !== 'undefined') {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   }
 }

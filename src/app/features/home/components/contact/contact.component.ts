@@ -13,17 +13,17 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
     <section id="contact" class="contact-section">
       <div class="contact-container">
         <app-section-heading
-          title="Have a project in mind? Let's build something meaningful."
-          eyebrow="Initiate Conversation"
-          description="Whether you have an upcoming backend project, need Laravel architecture expertise, or wish to discuss an engineering role — reach out directly.">
+          title="Let's connect and discuss your next project."
+          eyebrow="Get In Touch"
+          description="Whether you have an upcoming project, are looking for a Laravel developer, or want to discuss a role, feel free to drop me a message.">
         </app-section-heading>
 
         <div class="contact-grid">
           <!-- Primary Direct Contact Card -->
           <div class="contact-card primary-card">
-            <h3 class="card-title">Direct Communication</h3>
+            <h3 class="card-title">Direct Contact</h3>
             <p class="card-note">
-              For reliable response, feel free to write to my verified email or call directly during business hours.
+              Feel free to reach out via email or phone. I usually respond within 24 hours.
             </p>
 
             <div class="channels-list">
@@ -83,8 +83,8 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
             <div class="location-box">
               <h4 class="loc-heading">Base of Operations</h4>
               <p class="loc-text">
-                Karachi, Pakistan (UTC+5)<br />
-                Comfortable collaborating with remote and distributed engineering teams across global time zones.
+                Karachi, Pakistan<br />
+                Comfortable collaborating with remote and distributed engineering teams globally.
               </p>
             </div>
 

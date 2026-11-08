@@ -24,20 +24,20 @@ import { filter } from 'rxjs/operators';
           </div>
         </a>
 
-        <!-- Desktop Navigation Links for SPA Pages -->
+        <!-- Desktop Navigation Links for Single-Page Smooth Scroll -->
         <nav class="desktop-nav" aria-label="Main Navigation">
           <ul class="nav-list">
-            <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
-            <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-            <li><a routerLink="/experience" routerLinkActive="active">Experience</a></li>
-            <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
-            <li><a routerLink="/skills" routerLinkActive="active">Skills</a></li>
+            <li><a href="#about" [class.active]="activeSection() === 'about'" (click)="scrollTo($event, 'about')">About</a></li>
+            <li><a href="#experience" [class.active]="activeSection() === 'experience'" (click)="scrollTo($event, 'experience')">Experience</a></li>
+            <li><a href="#projects" [class.active]="activeSection() === 'projects'" (click)="scrollTo($event, 'projects')">Projects</a></li>
+            <li><a href="#skills" [class.active]="activeSection() === 'skills'" (click)="scrollTo($event, 'skills')">Skills</a></li>
+            <li><a href="#education" [class.active]="activeSection() === 'education'" (click)="scrollTo($event, 'education')">Education</a></li>
           </ul>
         </nav>
 
         <!-- CTA Action & Hamburger -->
         <div class="nav-cta-group">
-          <a routerLink="/contact" class="nav-cta-btn" (click)="closeMenu()">
+          <a href="#contact" class="nav-cta-btn" (click)="scrollTo($event, 'contact')">
             <span>Let's Talk</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M7 17L17 7"></path>
@@ -70,26 +70,11 @@ import { filter } from 'rxjs/operators';
         <div class="mobile-panel">
           <div class="mobile-panel-header">
             <span class="panel-kicker">Navigation</span>
-            <span class="domain-pill">mubeen.site</span>
           </div>
 
           <ul class="mobile-nav-list">
             <li>
-              <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">
-                <div class="nav-item-content">
-                  <span class="nav-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                    </svg>
-                  </span>
-                  <span>Home</span>
-                </div>
-                <span class="chevron">&rarr;</span>
-              </a>
-            </li>
-            <li>
-              <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">
+              <a href="#about" [class.active]="activeSection() === 'about'" (click)="scrollTo($event, 'about')">
                 <div class="nav-item-content">
                   <span class="nav-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -103,7 +88,7 @@ import { filter } from 'rxjs/operators';
               </a>
             </li>
             <li>
-              <a routerLink="/experience" routerLinkActive="active" (click)="closeMenu()">
+              <a href="#experience" [class.active]="activeSection() === 'experience'" (click)="scrollTo($event, 'experience')">
                 <div class="nav-item-content">
                   <span class="nav-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -117,7 +102,7 @@ import { filter } from 'rxjs/operators';
               </a>
             </li>
             <li>
-              <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">
+              <a href="#projects" [class.active]="activeSection() === 'projects'" (click)="scrollTo($event, 'projects')">
                 <div class="nav-item-content">
                   <span class="nav-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -132,7 +117,7 @@ import { filter } from 'rxjs/operators';
               </a>
             </li>
             <li>
-              <a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">
+              <a href="#skills" [class.active]="activeSection() === 'skills'" (click)="scrollTo($event, 'skills')">
                 <div class="nav-item-content">
                   <span class="nav-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -145,8 +130,22 @@ import { filter } from 'rxjs/operators';
                 <span class="chevron">&rarr;</span>
               </a>
             </li>
+            <li>
+              <a href="#education" [class.active]="activeSection() === 'education'" (click)="scrollTo($event, 'education')">
+                <div class="nav-item-content">
+                  <span class="nav-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                  </span>
+                  <span>Education</span>
+                </div>
+                <span class="chevron">&rarr;</span>
+              </a>
+            </li>
             <li class="mobile-cta-item">
-              <a routerLink="/contact" class="mobile-contact-link" (click)="closeMenu()">
+              <a href="#contact" class="mobile-contact-link" (click)="scrollTo($event, 'contact')">
                 <span>Contact &amp; Start Discussion</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path d="M7 17L17 7"></path>
@@ -157,7 +156,7 @@ import { filter } from 'rxjs/operators';
           </ul>
 
           <div class="mobile-panel-footer">
-            <span class="loc-text">Karachi, Pakistan (UTC+5)</span>
+            <span class="loc-text">Karachi, Pakistan</span>
             <span class="status-live">Open to Opportunities</span>
           </div>
         </div>
@@ -583,23 +582,14 @@ import { filter } from 'rxjs/operators';
 export class NavbarComponent {
   isScrolled = signal<boolean>(false);
   mobileMenuOpen = signal<boolean>(false);
+  activeSection = signal<string>('hero');
 
-  private router = inject(Router);
-
-  constructor() {
-    this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(() => {
-        this.closeMenu();
-        if (typeof window !== 'undefined') {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      });
-  }
+  private sections = ['hero', 'about', 'experience', 'projects', 'skills', 'education', 'contact'];
 
   @HostListener('window:scroll')
   onScroll() {
     this.isScrolled.set(window.scrollY > 20);
+    this.determineActiveSection();
   }
 
   toggleMenu() {
@@ -608,5 +598,29 @@ export class NavbarComponent {
 
   closeMenu() {
     this.mobileMenuOpen.set(false);
+  }
+
+  scrollTo(event: MouseEvent, targetId: string) {
+    event.preventDefault();
+    this.closeMenu();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      this.activeSection.set(targetId);
+    }
+  }
+
+  private determineActiveSection() {
+    if (typeof window === 'undefined') return;
+    const threshold = 180;
+    let current = this.sections[0];
+
+    for (const sectionId of this.sections) {
+      const el = document.getElementById(sectionId);
+      if (el && el.getBoundingClientRect().top <= threshold) {
+        current = sectionId;
+      }
+    }
+    this.activeSection.set(current);
   }
 }

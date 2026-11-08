@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SeoService } from '../../core/services/seo.service';
 import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { HeroComponent } from './components/hero/hero.component';
@@ -54,4 +55,14 @@ import { ContactComponent } from './components/contact/contact.component';
     }
   `]
 })
-export class HomeComponent {}
+export class HomeComponent implements OnInit {
+  private seo = inject(SeoService);
+
+  ngOnInit() {
+    this.seo.updateSeo({
+      title: 'Mubeen Aslam — Software Engineer (PHP & Laravel)',
+      description: 'Software Engineer specializing in PHP, Laravel, high-throughput REST APIs, MySQL, and resilient backend systems based in Karachi, PK.',
+      canonicalPath: '/'
+    });
+  }
+}

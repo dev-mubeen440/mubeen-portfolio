@@ -12,7 +12,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
       <div class="about-container">
         <app-section-heading
           [title]="aboutData.heading"
-          eyebrow="Background & Approach">
+          eyebrow="Background & Values">
         </app-section-heading>
 
         <div class="about-layout">
@@ -26,24 +26,24 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
               <div class="principle-item">
                 <span class="principle-num">01</span>
                 <div class="principle-body">
-                  <h4>Scalable Backend Core</h4>
-                  <p>Engineering maintainable MVC structures and clean business domain services in Laravel.</p>
+                  <h4>Clean Code & Architecture</h4>
+                  <p>Writing organized, readable Laravel code following solid MVC conventions and separation of concerns.</p>
                 </div>
               </div>
 
               <div class="principle-item">
                 <span class="principle-num">02</span>
                 <div class="principle-body">
-                  <h4>Database Precision</h4>
-                  <p>Fine-tuning MySQL schemas, indexing, and complex queries for zero-bottleneck performance.</p>
+                  <h4>Reliable Databases</h4>
+                  <p>Designing sensible relational schemas in MySQL and writing optimized queries that scale smoothly.</p>
                 </div>
               </div>
 
               <div class="principle-item">
                 <span class="principle-num">03</span>
                 <div class="principle-body">
-                  <h4>Production Reliability</h4>
-                  <p>Automating verification and deployments with robust GitHub Actions CI/CD workflows.</p>
+                  <h4>Consistent Delivery</h4>
+                  <p>Using Git branching, GitHub Actions CI/CD, and clear documentation to ship dependable updates.</p>
                 </div>
               </div>
             </div>
@@ -52,7 +52,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
           <!-- Quick Metric / Snapshot Column -->
           <div class="snapshot-column">
             <div class="snapshot-card">
-              <h3 class="snapshot-title">Engineering Snapshot</h3>
+              <h3 class="snapshot-title">Overview</h3>
 
               <div class="snapshot-list">
                 @for (item of aboutData.highlights; track item.label) {
@@ -65,7 +65,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
 
               <div class="snapshot-quote">
                 <span class="quote-mark">&ldquo;</span>
-                <p>Committed to clean code, strong conventions, and pragmatic architectural decisions that hold up under real-world usage.</p>
+                <p>I focus on building straightforward, dependable systems that deliver real value to the business and a smooth experience for users.</p>
               </div>
             </div>
           </div>

@@ -12,9 +12,9 @@ import { TechIconComponent } from '../../../../shared/components/tech-icon/tech-
     <section id="skills" class="skills-section">
       <div class="skills-container">
         <app-section-heading
-          title="Technical Competencies"
-          eyebrow="Specialization &amp; Tooling"
-          description="Structured inventory of backend architectures, engineering frameworks, datastores, and development infrastructure with dedicated technology icons.">
+          title="Skills & Technologies"
+          eyebrow="Toolkit"
+          description="Technologies, frameworks, and developer tools I work with regularly to build backend systems and web applications.">
         </app-section-heading>
 
         <div class="skills-grid">

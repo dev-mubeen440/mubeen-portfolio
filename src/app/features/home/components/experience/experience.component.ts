@@ -11,9 +11,9 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     <section id="experience" class="experience-section">
       <div class="experience-container">
         <app-section-heading
-          title="Professional Experience"
-          eyebrow="Career Timeline"
-          description="Track record of delivering production software, scalable backend APIs, and reliable database architectures.">
+          title="Work Experience"
+          eyebrow="Career History"
+          description="A summary of my roles and hands-on contributions across software development teams.">
         </app-section-heading>
 
         <div class="timeline">

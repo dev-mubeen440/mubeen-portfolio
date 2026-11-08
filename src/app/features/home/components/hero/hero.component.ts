@@ -36,7 +36,7 @@ import gsap from 'gsap';
 
           <!-- Action Buttons (Mobile-first stack) -->
           <div class="hero-actions gsap-fade">
-            <app-button routerLink="/projects" variant="primary" class="hero-action-btn">
+            <app-button href="#projects" variant="primary" class="hero-action-btn">
               View Selected Work
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M7 17L17 7"></path>
@@ -44,7 +44,7 @@ import gsap from 'gsap';
               </svg>
             </app-button>
 
-            <app-button routerLink="/contact" variant="secondary" class="hero-action-btn">
+            <app-button href="#contact" variant="secondary" class="hero-action-btn">
               Contact Me
             </app-button>
 
@@ -86,40 +86,77 @@ import gsap from 'gsap';
 
         <!-- Technical Identity Visual Panel (Responsive on small screens) -->
         <div class="hero-tech-card gsap-card" aria-hidden="true">
-          <div class="tech-card-header">
-            <span class="file-tag">backend-core.php</span>
-            <span class="status-indicator">production-ready</span>
+          <div class="card-tabbar">
+            <div class="card-tabs">
+              <span class="tab tab-active">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                backend-core.php
+              </span>
+              <span class="tab">routes/api.php</span>
+            </div>
+            <div class="card-badges">
+              <span class="badge-ci">
+                <span class="ci-dot"></span>
+                CI passing
+              </span>
+              <span class="badge-prod">production-ready</span>
+            </div>
           </div>
 
           <div class="tech-code-block">
-            <div class="code-line"><span class="c-keyword">namespace</span> <span class="c-scope">App\\Core\\Architecture</span>;</div>
-            <div class="code-line empty"></div>
-            <div class="code-line"><span class="c-keyword">class</span> <span class="c-class">BackendArchitect</span> <span class="c-keyword">implements</span> <span class="c-interface">ScalableSystem</span> &#123;</div>
-            <div class="code-line indent-1"><span class="c-keyword">use</span> <span class="c-trait">CleanCode, HighPerformance, ResilientAPIs</span>;</div>
-            <div class="code-line empty"></div>
-            <div class="code-line indent-1"><span class="c-doc">/** Stack capabilities &amp; pipeline */</span></div>
-            <div class="code-line indent-1"><span class="c-keyword">protected array</span> <span class="c-var">$stack</span> = [</div>
-            <div class="code-line indent-2"><span class="c-str">'framework'</span>&nbsp;<span class="c-op">=></span> <span class="c-val">'Laravel 11 / PHP 8.3'</span>,</div>
-            <div class="code-line indent-2"><span class="c-str">'database'</span>&nbsp;&nbsp;<span class="c-op">=></span> <span class="c-val">'MySQL / PostgreSQL / Redis'</span>,</div>
-            <div class="code-line indent-2"><span class="c-str">'domain'</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-op">=></span> <span class="c-val">'https://mubeen.site'</span>,</div>
-            <div class="code-line indent-2"><span class="c-str">'pipelines'</span>&nbsp;<span class="c-op">=></span> <span class="c-val">'GitHub Actions CI/CD'</span>,</div>
-            <div class="code-line indent-2"><span class="c-str">'security'</span>&nbsp;&nbsp;<span class="c-op">=></span> <span class="c-val">'Sanctum RBAC &amp; Auth'</span>,</div>
-            <div class="code-line indent-1">];</div>
-            <div class="code-line empty"></div>
-            <div class="code-line indent-1"><span class="c-keyword">public function</span> <span class="c-func">execute</span>(): <span class="c-type">ReliableResult</span> &#123;</div>
-            <div class="code-line indent-2"><span class="c-keyword">return</span> <span class="c-var">$this</span>->deliverProductionSystems();</div>
-            <div class="code-line indent-1">&#125;</div>
-            <div class="code-line">&#125;</div>
+            <div class="code-gutter">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
+            </div>
+            <div class="code-body">
+              <div class="code-line"><span class="c-keyword">namespace</span> <span class="c-scope">App&#92;Core&#92;Architecture</span>;</div>
+              <div class="code-line empty"></div>
+              <div class="code-line"><span class="c-keyword">class</span> <span class="c-class">BackendArchitect</span> <span class="c-keyword">implements</span> <span class="c-interface">ScalableSystem</span> &#123;</div>
+              <div class="code-line indent-1"><span class="c-keyword">use</span> <span class="c-trait">CleanCode</span>, <span class="c-trait">HighPerformance</span>, <span class="c-trait">ResilientAPIs</span>;</div>
+              <div class="code-line empty"></div>
+              <div class="code-line indent-1"><span class="c-doc">/** Stack capabilities &amp; pipeline */</span></div>
+              <div class="code-line indent-1"><span class="c-keyword">protected array</span> <span class="c-var">$stack</span> = [</div>
+              <div class="code-line indent-2"><span class="c-str">'framework'</span> <span class="c-op">=&gt;</span> <span class="c-val">'Laravel 11 / PHP 8.3'</span>,</div>
+              <div class="code-line indent-2"><span class="c-str">'database'</span>  <span class="c-op">=&gt;</span> <span class="c-val">'MySQL · PostgreSQL · Redis'</span>,</div>
+              <div class="code-line indent-2"><span class="c-str">'auth'</span>      <span class="c-op">=&gt;</span> <span class="c-val">'Sanctum · RBAC · JWT'</span>,</div>
+              <div class="code-line indent-2"><span class="c-str">'pipelines'</span> <span class="c-op">=&gt;</span> <span class="c-val">'GitHub Actions CI/CD'</span>,</div>
+              <div class="code-line indent-2"><span class="c-str">'domain'</span>    <span class="c-op">=&gt;</span> <span class="c-val">'https://mubeen.site'</span>,</div>
+              <div class="code-line indent-1">];</div>
+              <div class="code-line empty"></div>
+              <div class="code-line indent-1"><span class="c-keyword">public function</span> <span class="c-func">execute</span>(): <span class="c-type">ReliableResult</span></div>
+              <div class="code-line indent-1">&#123;</div>
+              <div class="code-line indent-2"><span class="c-keyword">return</span> <span class="c-var">$this</span><span class="c-op">-&gt;</span><span class="c-func">deliverProductionSystems</span>();</div>
+              <div class="code-line indent-1">&#125;</div>
+              <div class="code-line">&#125;</div>
+              <div class="code-line empty"></div>
+              <div class="code-line c-comment">// &#10003; 3 companies &middot; 5+ clients shipped</div>
+            </div>
           </div>
 
           <div class="tech-card-footer">
-            <div class="stat-pill">
-              <span class="stat-key">Role</span>
-              <span class="stat-val">Software Engineer @ QSoft</span>
-            </div>
-            <div class="stat-pill">
-              <span class="stat-key">Education</span>
-              <span class="stat-val">BSCS (VU, 2027)</span>
+            <div class="footer-grid">
+              <div class="footer-cell">
+                <span class="fc-label">Role</span>
+                <span class="fc-value">Software Engineer</span>
+                <span class="fc-sub">QSoft &middot; Karachi</span>
+              </div>
+              <div class="footer-cell">
+                <span class="fc-label">Education</span>
+                <span class="fc-value">BSCS</span>
+                <span class="fc-sub">Virtual University &middot; 2027</span>
+              </div>
+              <div class="footer-cell">
+                <span class="fc-label">Experience</span>
+                <span class="fc-value">1.5+ years</span>
+                <span class="fc-sub">3 companies</span>
+              </div>
+              <div class="footer-cell">
+                <span class="fc-label">Deliveries</span>
+                <span class="fc-value">5+ live sites</span>
+                <span class="fc-sub">APIs &middot; CRMs &middot; CMS</span>
+              </div>
             </div>
           </div>
         </div>
@@ -329,96 +366,181 @@ import gsap from 'gsap';
 
     /* Technical visual card */
     .hero-tech-card {
-      background: #ffffff;
-      border: 1px solid rgba(14, 131, 69, 0.2);
+      background: #072e18;
+      border: 1px solid rgba(14, 131, 69, 0.25);
       border-radius: var(--radius-md);
-      box-shadow: var(--shadow-lg), 0 0 20px rgba(14, 131, 69, 0.08);
+      box-shadow: var(--shadow-lg), 0 0 28px rgba(14, 131, 69, 0.08);
       overflow: hidden;
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       transform-origin: center;
     }
 
     @media (min-width: 640px) {
       .hero-tech-card {
-        font-size: 0.82rem;
+        font-size: 0.78rem;
       }
     }
 
-    .tech-card-header {
-      background: linear-gradient(135deg, #072e18 0%, #0d4a27 100%);
-      padding: 0.75rem 1rem;
+    /* ── Tab bar ── */
+    .card-tabbar {
+      background: #052112;
+      padding: 0.35rem 0.85rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(14, 131, 69, 0.2);
+      gap: 0.75rem;
+      border-bottom: 1px solid rgba(14, 131, 69, 0.25);
+      min-height: 42px;
+      flex-wrap: wrap;
     }
 
-    @media (min-width: 640px) {
-      .tech-card-header {
-        padding: 0.85rem 1.25rem;
-      }
+    .card-tabs {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
     }
 
-    .file-tag {
-      color: #ffffff;
+    .tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.72rem;
+      line-height: 1.2;
+      color: rgba(167, 243, 208, 0.55);
+      border-radius: 4px;
+      white-space: nowrap;
+      cursor: default;
+      transition: color 0.15s ease, background 0.15s ease;
+    }
+
+    .tab.tab-active {
+      color: #d1fae5;
+      background: rgba(14, 131, 69, 0.25);
       font-weight: 600;
     }
 
-    .status-indicator {
-      font-size: 0.7rem;
-      color: #a7f3d0;
-      background: rgba(16, 185, 129, 0.2);
-      padding: 0.15rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(16, 185, 129, 0.3);
+    .tab.tab-active svg {
+      color: #34d399;
+      flex-shrink: 0;
     }
 
+    .card-badges {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .badge-ci {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.68rem;
+      font-weight: 600;
+      line-height: 1;
+      color: #6ee7b7;
+      white-space: nowrap;
+    }
+
+    .ci-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
+      animation: pulseGlow 2.5s infinite;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .badge-prod {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.65rem;
+      font-weight: 600;
+      line-height: 1;
+      color: #a7f3d0;
+      background: rgba(16, 185, 129, 0.14);
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(16, 185, 129, 0.28);
+      white-space: nowrap;
+    }
+
+    /* ── Code area ── */
     .tech-code-block {
-      padding: 1.25rem 1rem;
-      line-height: 1.65;
-      color: #334155;
-      background: #fafcfb;
+      display: flex;
+      background: #072e18;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }
 
-    @media (min-width: 640px) {
-      .tech-code-block {
-        padding: 1.5rem 1.25rem;
-        line-height: 1.7;
-      }
+    .code-gutter {
+      display: flex;
+      flex-direction: column;
+      padding: 0.9rem 0.55rem 0.9rem 0.75rem;
+      background: rgba(0, 0, 0, 0.22);
+      border-right: 1px solid rgba(14, 131, 69, 0.18);
+      text-align: right;
+      user-select: none;
+      flex-shrink: 0;
+    }
+
+    .code-gutter span {
+      display: block;
+      font-size: 0.64rem;
+      line-height: 1.65;
+      color: rgba(167, 243, 208, 0.25);
+    }
+
+    .code-body {
+      padding: 0.9rem 1rem 0.9rem 0.85rem;
+      line-height: 1.65;
+      flex: 1;
+      min-width: 0;
     }
 
     .code-line {
       white-space: pre;
+      display: block;
+      font-size: 0.74rem;
     }
+
+    @media (min-width: 640px) {
+      .code-line {
+        font-size: 0.78rem;
+      }
+    }
+
     .code-line.empty {
-      height: 0.65rem;
+      height: 0.6rem;
     }
-    .indent-1 { padding-left: 1rem; }
-    .indent-2 { padding-left: 2rem; }
 
-    .c-keyword { color: #dc2626; font-weight: 600; }
-    .c-scope { color: #0f172a; }
-    .c-class { color: #d97706; font-weight: 600; }
-    .c-interface { color: #059669; }
-    .c-trait { color: #2563eb; }
-    .c-doc { color: #64748b; font-style: italic; }
-    .c-var { color: #2563eb; }
-    .c-str { color: #059669; }
-    .c-val { color: #047857; font-weight: 500; }
-    .c-func { color: #0284c7; }
-    .c-op { color: #dc2626; font-weight: 600; }
-    .c-type { color: #d97706; }
+    .indent-1 { padding-left: 1.15rem; }
+    .indent-2 { padding-left: 2.3rem; }
 
+    /* Syntax highlighting */
+    .c-keyword   { color: #f472b6; font-weight: 600; }
+    .c-scope     { color: #e2e8f0; }
+    .c-class     { color: #fbbf24; font-weight: 600; }
+    .c-interface { color: #34d399; }
+    .c-trait     { color: #93c5fd; }
+    .c-doc       { color: rgba(167, 243, 208, 0.45); font-style: italic; }
+    .c-var       { color: #93c5fd; }
+    .c-str       { color: #6ee7b7; }
+    .c-val       { color: #a7f3d0; }
+    .c-func      { color: #67e8f9; }
+    .c-op        { color: #f472b6; }
+    .c-type      { color: #fbbf24; }
+    .c-comment   { color: #34d399; font-style: italic; opacity: 0.85; }
+
+    /* ── Footer ── */
     .tech-card-footer {
-      background: #f1f5f9;
+      background: #f8fafc;
       padding: 0.85rem 1rem;
       border-top: 1px solid var(--color-border-subtle);
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
       font-family: var(--font-sans);
     }
 
@@ -428,21 +550,37 @@ import gsap from 'gsap';
       }
     }
 
-    .stat-pill {
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem 1rem;
+    }
+
+    .footer-cell {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
+      flex-direction: column;
+      gap: 0.1rem;
     }
 
-    .stat-key {
-      color: var(--color-muted-text);
-      font-weight: 500;
-    }
-
-    .stat-val {
-      color: var(--color-primary-text);
+    .fc-label {
+      font-size: 0.62rem;
       font-weight: 700;
+      color: var(--color-accent-green);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .fc-value {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--color-primary-text);
+      line-height: 1.25;
+    }
+
+    .fc-sub {
+      font-size: 0.7rem;
+      color: var(--color-muted-text);
+      line-height: 1.3;
     }
   `]
 })

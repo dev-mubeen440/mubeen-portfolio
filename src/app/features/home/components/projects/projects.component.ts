@@ -11,9 +11,9 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     <section id="projects" class="projects-section">
       <div class="projects-container">
         <app-section-heading
-          title="Selected Projects"
-          eyebrow="Engineering Showcase"
-          description="Detailed architectural overviews of production systems, mission-critical maritime software, business platforms, and delivered web portals.">
+          title="Featured Work"
+          eyebrow="Portfolio & Case Studies"
+          description="A selection of production web applications, maritime management tools, and custom business platforms I have developed and maintained.">
         </app-section-heading>
 
         <div class="projects-grid">

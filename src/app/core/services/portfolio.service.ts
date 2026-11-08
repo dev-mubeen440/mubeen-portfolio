@@ -13,25 +13,25 @@ export class PortfolioService {
     email: 'mubeenaslam440@gmail.com',
     github: 'https://github.com/dev-mubeen440',
     linkedin: 'https://www.linkedin.com/in/mubeen-aslam-177475294/',
-    headline: 'Building scalable web applications, reliable backend systems, and meaningful digital experiences.',
-    subheadline: 'Software Engineer specializing in PHP and Laravel, with experience building production applications, REST APIs, CRM systems, and database-driven platforms.',
+    headline: 'Backend Engineer specializing in PHP & Laravel, focused on clean APIs, solid database design, and reliable web applications.',
+    subheadline: 'Currently building and maintaining production web applications, RESTful services, and database-driven business systems at QSoft.',
     cvPath: '/MubeenAslamResume.pdf',
     hasCvFile: true
   };
 
   getAbout() {
     return {
-      heading: 'A little about me',
+      heading: 'About Me',
       paragraphs: [
-        'Software Engineer with hands-on experience in PHP and Laravel development, currently working at QSoft. Skilled in building scalable web applications, CRM systems, and database-driven platforms.',
-        'Experienced in MySQL database optimization, REST API development, and CI/CD deployment using GitHub Actions.',
-        'Passionate about developing efficient backend systems and solving real-world problems through clean, maintainable code.'
+        "I'm a backend-focused Software Engineer based in Karachi, currently working at QSoft. I specialize in PHP and Laravel, building dependable web applications, REST APIs, and database-driven business tools that teams rely on daily.",
+        'My work involves writing clean MVC code, structuring and optimizing MySQL databases, integrating external and internal APIs, and automating deployments through GitHub Actions.',
+        "I enjoy solving practical business problems with clean, maintainable code—delivering features that perform smoothly in production without unnecessary complexity."
       ],
       highlights: [
-        { label: 'Primary Focus', value: 'Laravel & Backend Architecture' },
-        { label: 'Engineering Craft', value: 'REST APIs & DB Optimization' },
-        { label: 'Continuous Delivery', value: 'GitHub Actions CI/CD' },
-        { label: 'Current Base', value: 'Karachi, Pakistan' }
+        { label: 'Primary Focus', value: 'PHP & Laravel Development' },
+        { label: 'Core Expertise', value: 'REST APIs & MySQL' },
+        { label: 'Automation', value: 'GitHub Actions CI/CD' },
+        { label: 'Location', value: 'Karachi, Pakistan' }
       ]
     };
   }
@@ -44,11 +44,11 @@ export class PortfolioService {
         duration: 'July 2025 – Present',
         location: 'Karachi, Pakistan',
         responsibilities: [
-          'Develop and maintain scalable web applications using the Laravel framework.',
-          'Implement backend logic for database-driven systems.',
-          'Optimize MySQL queries to improve application performance.',
-          'Build REST APIs for internal and external integrations.',
-          'Manage automated deployment pipelines using GitHub Actions.'
+          'Develop and maintain production web applications and business portals using Laravel and PHP.',
+          'Design and optimize relational database schemas and queries in MySQL to keep response times fast.',
+          'Build and document secure REST APIs for internal workflows and external integrations.',
+          'Set up and maintain CI/CD pipelines with GitHub Actions for automated testing and deployments.',
+          'Collaborate with team members on code reviews, bug fixes, and feature enhancements.'
         ]
       },
       {
@@ -57,11 +57,10 @@ export class PortfolioService {
         duration: 'June 2024 – July 2025',
         location: 'Karachi, Pakistan',
         responsibilities: [
-          'Developed PHP-based web applications for multiple client projects.',
-          'Designed backend systems and implemented database-driven features.',
-          'Built responsive user interfaces using HTML, CSS, and JavaScript.',
-          'Collaborated with senior developers to deliver scalable solutions.',
-          'Assisted in debugging and optimizing existing software systems.'
+          'Built and maintained backend features across multiple client web applications using PHP and Laravel.',
+          'Created database migrations, seeders, and optimized queries for business logic.',
+          'Developed responsive frontend templates using Blade, HTML, CSS, and JavaScript.',
+          'Worked closely with senior developers to troubleshoot issues and deliver updates on schedule.'
         ]
       },
       {
@@ -70,10 +69,9 @@ export class PortfolioService {
         duration: 'January 2024 – May 2024',
         location: 'Karachi, Pakistan',
         responsibilities: [
-          'Learned database design principles and SQL fundamentals.',
-          'Built backend functionality using PHP.',
-          'Developed responsive interfaces using HTML, CSS, and JavaScript.',
-          'Assisted in developing small internal tools and utilities.'
+          'Gained hands-on experience in PHP development and relational database design.',
+          'Assisted with frontend styling, form validations, and interactive elements using JavaScript.',
+          'Helped test, debug, and maintain internal client tools and administrative pages.'
         ]
       }
     ];
@@ -83,51 +81,51 @@ export class PortfolioService {
     return [
       {
         name: 'PacMarine PIRS API',
-        category: 'Maritime Software / Backend API',
-        description: 'Developed a Laravel REST API for a maritime inspection and job management system.',
+        category: 'Maritime Software · REST API',
+        description: 'A dedicated REST API powering a maritime inspection, vessel auditing, and job coordination system.',
         technologies: ['PHP', 'Laravel', 'MySQL', 'REST APIs', 'Sanctum'],
         contributions: [
-          'Authentication and role-based access control (RBAC).',
-          'CRUD operations, model relationships, optimized filtering and pagination.',
-          'API documentation, robust backend architecture and data management.'
+          'Engineered secure token authentication and role-based permissions (RBAC) with Laravel Sanctum.',
+          'Built endpoints for job lifecycle management, file attachments, and paginated audit logs.',
+          'Optimized database queries and indexing to maintain fast API response times under load.'
         ]
       },
       {
         name: 'Ship Shore Compatibility (SSC)',
-        category: 'Maritime Software / Business Application',
-        description: 'Developed a Laravel and Blade-based maritime application for vessel-terminal compatibility assessment.',
+        category: 'Maritime Operations Platform',
+        description: 'An operational web platform used to assess and verify compatibility between marine vessels and port terminals.',
         technologies: ['PHP', 'Laravel', 'Blade', 'JavaScript', 'MySQL'],
         contributions: [
-          'Vessel and terminal management with operational workflows.',
-          'Dynamic compatibility calculations and safety rule validation.',
-          'Document handling, user roles & granular permissions, and compliance reporting.'
+          'Implemented compatibility validation algorithms based on vessel specifications and terminal constraints.',
+          'Built vessel profiling, documentation uploads, and automated safety checklist generation.',
+          'Designed intuitive Blade dashboards and administrative approval workflows.'
         ]
       },
       {
-        name: 'PKF Task Management & Attendance System',
-        category: 'Business Management Software',
-        description: 'Developed and maintained Laravel applications for task tracking and employee attendance.',
+        name: 'PKF Task & Attendance Management',
+        category: 'Internal Business Management',
+        description: 'An internal company portal streamlining daily task allocation, attendance tracking, and employee leave requests.',
         technologies: ['PHP', 'Laravel', 'MySQL', 'JavaScript'],
         contributions: [
-          'Task assignment and granular milestone status tracking.',
-          'Attendance records, comprehensive leave management, and multi-tier approval workflows.',
-          'Role-based access controls and executive management reporting.'
+          'Developed real-time attendance logging, multi-level leave approvals, and daily milestone tracking.',
+          'Implemented role-based dashboards for managers, team leads, and staff members.',
+          'Generated automated monthly timesheet reports and exportable audit records.'
         ]
       },
       {
-        name: 'Laravel CMS Websites',
-        category: 'Delivered Web Platforms / CMS',
-        description: 'Delivered production web platforms and CMS solutions built with Laravel and PHP for diverse operational environments.',
+        name: 'Production CMS & Web Platforms',
+        category: 'Client Web Platforms',
+        description: 'Custom web platforms and CMS-driven corporate websites built with Laravel and PHP for corporate clients.',
         technologies: ['PHP', 'Laravel', 'MySQL', 'Blade', 'JavaScript'],
         contributions: [
-          'Configured modular content architectures, relational schemas, and responsive presentation layers.',
-          'Engineered tailored administrative interfaces and performance-tuned queries for live web properties.'
+          'Developed structured content schemas, dynamic page builders, and administrative dashboards.',
+          'Ensured responsive rendering, secure input handling, and SEO-friendly routing.'
         ],
         clientWebsites: [
           { title: 'Ziewnic', url: 'https://ziewnic.com' },
           { title: 'Ziewnic UAE', url: 'https://ziewnic.ae' },
           { title: 'Khatri Services', url: 'https://khatriservices.com' },
-          { title: 'MCKJ', url: 'https://mckj.org.pk', badge: 'Volunteer Work' },
+          { title: 'MCKJ', url: 'https://mckj.org.pk', badge: 'Community Work' },
           { title: 'PacMarine', url: 'https://pacmarine.com' }
         ]
       }

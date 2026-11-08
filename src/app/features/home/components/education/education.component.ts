@@ -12,8 +12,8 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
       <div class="education-container">
         <app-section-heading
           title="Education"
-          eyebrow="Academic Foundation"
-          description="Formal academic history grounding core computer science fundamentals and analytical reasoning.">
+          eyebrow="Academic Background"
+          description="Academic foundation in computer science and software development principles.">
         </app-section-heading>
 
         <div class="education-grid">
