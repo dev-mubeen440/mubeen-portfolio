@@ -11,11 +11,11 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
   imports: [CommonModule, SectionHeadingComponent, SocialLinksComponent, ButtonComponent],
   template: `
     <section id="contact" class="contact-section">
-      <div class="contact-container">
+      <div class="contact-container section-container">
         <app-section-heading
           title="Let's connect and discuss your next project."
           eyebrow="Get In Touch"
-          description="Whether you have an upcoming project, are looking for a Laravel developer, or want to discuss a role, feel free to drop me a message.">
+          description="Have a project in mind, looking for a PHP/Laravel developer, or interested in discussing a software engineering opportunity? I'm open to meaningful technical conversations, professional connections, and opportunities to build useful software.">
         </app-section-heading>
 
         <div class="contact-grid">
@@ -101,20 +101,19 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
   `,
   styles: [`
     .contact-section {
-      padding: 4.5rem 1.25rem;
+      padding: 4.5rem 0;
       border-top: 1px solid var(--color-border-subtle);
       background: #fafcfb;
     }
 
     @media (min-width: 640px) {
       .contact-section {
-        padding: 5rem 1.5rem;
+        padding: 5rem 0;
       }
     }
 
     .contact-container {
-      max-width: var(--container-max-width);
-      margin: 0 auto;
+      width: 100%;
     }
 
     .contact-grid {

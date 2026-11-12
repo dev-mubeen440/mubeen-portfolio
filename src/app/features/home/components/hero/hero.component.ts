@@ -23,15 +23,15 @@ import gsap from 'gsap';
 
           <h1 class="hero-title">
             <span class="name-block gsap-title-name">Mubeen Aslam</span>
-            <span class="role-block gsap-title-role">PHP Laravel Developer</span>
+            <span class="role-block gsap-title-role">Software Engineer | PHP &amp; Laravel</span>
           </h1>
 
           <p class="hero-intro gsap-fade">
-            Building scalable web applications, reliable backend systems, and meaningful digital experiences.
+            Building scalable web applications, reliable backend systems, and meaningful software solutions.
           </p>
 
           <p class="hero-supporting gsap-fade">
-            Software Engineer specializing in PHP and Laravel, with experience building production applications, REST APIs, CRM systems, and database-driven platforms.
+            I'm a Software Engineer specializing in PHP and Laravel, with hands-on experience developing production web applications, REST APIs, CRM systems, and database-driven platforms.
           </p>
 
           <!-- Action Buttons (Mobile-first stack) -->
@@ -95,43 +95,38 @@ import gsap from 'gsap';
                 </svg>
                 backend-core.php
               </span>
-              <span class="tab">routes/api.php</span>
-            </div>
-            <div class="card-badges">
-              <span class="badge-ci">
-                <span class="ci-dot"></span>
-                CI passing
-              </span>
-              <span class="badge-prod">production-ready</span>
             </div>
           </div>
 
           <div class="tech-code-block">
             <div class="code-gutter">
-              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span>
             </div>
             <div class="code-body">
-              <div class="code-line"><span class="c-keyword">namespace</span> <span class="c-scope">App&#92;Core&#92;Architecture</span>;</div>
+              <div class="code-line"><span class="c-keyword">namespace</span> <span class="c-scope">App&#92;Core&#92;Architecture</span><span class="c-punct">;</span></div>
               <div class="code-line empty"></div>
-              <div class="code-line"><span class="c-keyword">class</span> <span class="c-class">BackendArchitect</span> <span class="c-keyword">implements</span> <span class="c-interface">ScalableSystem</span> &#123;</div>
-              <div class="code-line indent-1"><span class="c-keyword">use</span> <span class="c-trait">CleanCode</span>, <span class="c-trait">HighPerformance</span>, <span class="c-trait">ResilientAPIs</span>;</div>
+              <div class="code-line"><span class="c-keyword">class</span> <span class="c-class">SoftwareEngineer</span> <span class="c-keyword">implements</span> <span class="c-interface">ScalableSystem</span> <span class="c-bracket">&#123;</span></div>
+              <div class="code-line indent-1"><span class="c-keyword">use</span> <span class="c-trait">CleanCode</span><span class="c-punct">,</span> <span class="c-trait">HighPerformance</span><span class="c-punct">,</span> <span class="c-trait">ResilientAPIs</span><span class="c-punct">;</span></div>
               <div class="code-line empty"></div>
               <div class="code-line indent-1"><span class="c-doc">/** Stack capabilities &amp; pipeline */</span></div>
-              <div class="code-line indent-1"><span class="c-keyword">protected array</span> <span class="c-var">$stack</span> = [</div>
-              <div class="code-line indent-2"><span class="c-str">'framework'</span> <span class="c-op">=&gt;</span> <span class="c-val">'Laravel 11 / PHP 8.3'</span>,</div>
-              <div class="code-line indent-2"><span class="c-str">'database'</span>  <span class="c-op">=&gt;</span> <span class="c-val">'MySQL · PostgreSQL · Redis'</span>,</div>
-              <div class="code-line indent-2"><span class="c-str">'auth'</span>      <span class="c-op">=&gt;</span> <span class="c-val">'Sanctum · RBAC · JWT'</span>,</div>
-              <div class="code-line indent-2"><span class="c-str">'pipelines'</span> <span class="c-op">=&gt;</span> <span class="c-val">'GitHub Actions CI/CD'</span>,</div>
-              <div class="code-line indent-2"><span class="c-str">'domain'</span>    <span class="c-op">=&gt;</span> <span class="c-val">'https://mubeen.site'</span>,</div>
-              <div class="code-line indent-1">];</div>
+              <div class="code-line indent-1"><span class="c-keyword">protected array</span> <span class="c-var">$stack</span> <span class="c-op">=</span> <span class="c-bracket">[</span></div>
+              <div class="code-line indent-2"><span class="c-str">'backend'</span>      <span class="c-op">=&gt;</span> <span class="c-val">'PHP · Laravel'</span><span class="c-punct">,</span></div>
+              <div class="code-line indent-2"><span class="c-str">'frontend'</span>     <span class="c-op">=&gt;</span> <span class="c-val">'Angular · JavaScript · HTML · CSS'</span><span class="c-punct">,</span></div>
+              <div class="code-line indent-2"><span class="c-str">'database'</span>     <span class="c-op">=&gt;</span> <span class="c-val">'MySQL · PostgreSQL · Redis'</span><span class="c-punct">,</span></div>
+              <div class="code-line indent-2"><span class="c-str">'api'</span>          <span class="c-op">=&gt;</span> <span class="c-val">'REST APIs · Sanctum · RBAC'</span><span class="c-punct">,</span></div>
+              <div class="code-line indent-2"><span class="c-str">'architecture'</span> <span class="c-op">=&gt;</span> <span class="c-val">'MVC · OOP · SOLID · Design Patterns'</span><span class="c-punct">,</span></div>
+              <div class="code-line indent-2"><span class="c-str">'performance'</span>  <span class="c-op">=&gt;</span> <span class="c-val">'Query Optimization · Caching · Queues'</span><span class="c-punct">,</span></div>
+              <div class="code-line indent-2"><span class="c-str">'devops'</span>       <span class="c-op">=&gt;</span> <span class="c-val">'Git · GitHub Actions · CI/CD · Plesk'</span><span class="c-punct">,</span></div>
+              <div class="code-line indent-2"><span class="c-str">'domain'</span>       <span class="c-op">=&gt;</span> <span class="c-val">'https://mubeen.site'</span><span class="c-punct">,</span></div>
+              <div class="code-line indent-1"><span class="c-bracket">]</span><span class="c-punct">;</span></div>
               <div class="code-line empty"></div>
-              <div class="code-line indent-1"><span class="c-keyword">public function</span> <span class="c-func">execute</span>(): <span class="c-type">ReliableResult</span></div>
-              <div class="code-line indent-1">&#123;</div>
-              <div class="code-line indent-2"><span class="c-keyword">return</span> <span class="c-var">$this</span><span class="c-op">-&gt;</span><span class="c-func">deliverProductionSystems</span>();</div>
-              <div class="code-line indent-1">&#125;</div>
-              <div class="code-line">&#125;</div>
+              <div class="code-line indent-1"><span class="c-keyword">public function</span> <span class="c-func">execute</span><span class="c-bracket">()</span><span class="c-punct">:</span> <span class="c-type">ReliableResult</span></div>
+              <div class="code-line indent-1"><span class="c-bracket">&#123;</span></div>
+              <div class="code-line indent-2"><span class="c-keyword">return</span> <span class="c-var">$this</span><span class="c-op">-&gt;</span><span class="c-func">buildReliableSystems</span><span class="c-bracket">()</span><span class="c-punct">;</span></div>
+              <div class="code-line indent-1"><span class="c-bracket">&#125;</span></div>
+              <div class="code-line"><span class="c-bracket">&#125;</span></div>
               <div class="code-line empty"></div>
-              <div class="code-line c-comment">// &#10003; 3 companies &middot; 5+ clients shipped</div>
+              <div class="code-line c-comment">// &#10003; Production Apps &middot; Clients &middot; E2E</div>
             </div>
           </div>
 
@@ -149,7 +144,7 @@ import gsap from 'gsap';
               </div>
               <div class="footer-cell">
                 <span class="fc-label">Experience</span>
-                <span class="fc-value">1.5+ years</span>
+                <span class="fc-value">2+ years</span>
                 <span class="fc-sub">3 companies</span>
               </div>
               <div class="footer-cell">
@@ -168,21 +163,27 @@ import gsap from 'gsap';
       min-height: calc(100vh - var(--nav-height));
       display: flex;
       align-items: center;
-      padding: 2.25rem 1rem 3.5rem;
+      padding: 2rem 1rem 2.5rem;
       max-width: var(--container-max-width);
       margin: 0 auto;
     }
 
     @media (min-width: 640px) {
       .hero-section {
-        padding: 4.5rem 1.5rem 5rem;
+        padding: 2.5rem 1.5rem 3rem;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .hero-section {
+        padding: 2rem 1.5rem 2.5rem;
       }
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2.5rem;
+      gap: 1.75rem;
       align-items: center;
       width: 100%;
     }
@@ -190,7 +191,7 @@ import gsap from 'gsap';
     @media (min-width: 992px) {
       .hero-grid {
         grid-template-columns: 1.15fr 0.85fr;
-        gap: 4rem;
+        gap: 3rem;
       }
     }
 
@@ -208,7 +209,7 @@ import gsap from 'gsap';
       border-radius: 999px;
       padding: 0.3rem 0.85rem;
       width: fit-content;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
       box-shadow: var(--shadow-sm);
     }
 
@@ -236,7 +237,7 @@ import gsap from 'gsap';
       display: flex;
       flex-direction: column;
       gap: 0.2rem;
-      margin: 0 0 1rem 0;
+      margin: 0 0 0.9rem 0;
       line-height: 1.12;
     }
 
@@ -263,7 +264,7 @@ import gsap from 'gsap';
       line-height: 1.55;
       font-weight: 500;
       color: var(--color-primary-text);
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.65rem;
       max-width: 620px;
     }
 
@@ -271,7 +272,7 @@ import gsap from 'gsap';
       font-size: 0.94rem;
       line-height: 1.65;
       color: var(--color-secondary-text);
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
       max-width: 580px;
     }
 
@@ -279,7 +280,7 @@ import gsap from 'gsap';
       display: flex;
       flex-direction: column;
       gap: 0.65rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       width: 100%;
     }
 
@@ -426,49 +427,6 @@ import gsap from 'gsap';
       flex-shrink: 0;
     }
 
-    .card-badges {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex-shrink: 0;
-    }
-
-    .badge-ci {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.68rem;
-      font-weight: 600;
-      line-height: 1;
-      color: #6ee7b7;
-      white-space: nowrap;
-    }
-
-    .ci-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #10b981;
-      box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
-      animation: pulseGlow 2.5s infinite;
-      display: inline-block;
-      flex-shrink: 0;
-    }
-
-    .badge-prod {
-      display: inline-flex;
-      align-items: center;
-      font-size: 0.65rem;
-      font-weight: 600;
-      line-height: 1;
-      color: #a7f3d0;
-      background: rgba(16, 185, 129, 0.14);
-      padding: 0.3rem 0.65rem;
-      border-radius: 999px;
-      border: 1px solid rgba(16, 185, 129, 0.28);
-      white-space: nowrap;
-    }
-
     /* ── Code area ── */
     .tech-code-block {
       display: flex;
@@ -532,7 +490,9 @@ import gsap from 'gsap';
     .c-str       { color: #6ee7b7; }
     .c-val       { color: #a7f3d0; }
     .c-func      { color: #67e8f9; }
-    .c-op        { color: #f472b6; }
+    .c-op        { color: #facc15; font-weight: 600; }
+    .c-bracket   { color: #facc15; font-weight: 600; }
+    .c-punct     { color: #facc15; font-weight: 600; }
     .c-type      { color: #fbbf24; }
     .c-comment   { color: #34d399; font-style: italic; opacity: 0.85; }
 

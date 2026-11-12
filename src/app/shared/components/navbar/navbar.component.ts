@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
   imports: [CommonModule, RouterModule],
   template: `
     <header class="navbar" [class.scrolled]="isScrolled()">
-      <div class="nav-container">
+      <div class="nav-container section-container">
         <!-- Wordmark / Identity with Profile Picture -->
         <a routerLink="/" class="brand-link" (click)="closeMenu()">
           <img 
@@ -20,7 +20,7 @@ import { filter } from 'rxjs/operators';
             height="38" />
           <div class="brand-text">
             <span class="brand-name">Mubeen Aslam</span>
-            <span class="brand-sub">Backend Engineer &middot; Laravel &amp; PHP</span>
+            <span class="brand-sub">Software Engineer &middot; PHP &amp; Laravel</span>
           </div>
         </a>
 
@@ -189,10 +189,7 @@ import { filter } from 'rxjs/operators';
     }
 
     .nav-container {
-      max-width: var(--container-max-width);
       height: 100%;
-      margin: 0 auto;
-      padding: 0 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -201,7 +198,6 @@ import { filter } from 'rxjs/operators';
 
     @media (min-width: 640px) {
       .nav-container {
-        padding: 0 1.5rem;
         gap: 1.5rem;
       }
     }
@@ -333,12 +329,12 @@ import { filter } from 'rxjs/operators';
       font-size: 0.86rem;
       font-weight: 600;
       color: #ffffff !important;
-      background: linear-gradient(135deg, #0d5c31 0%, #0e8345 50%, #10b981 100%);
+      background: linear-gradient(to bottom, #03140B, #175616);
       padding: 0.5rem 1.15rem;
       border-radius: var(--radius-sm);
       text-decoration: none;
       transition: all var(--transition-fast);
-      box-shadow: 0 4px 12px rgba(14, 131, 69, 0.25);
+      box-shadow: 0 4px 12px rgba(3, 20, 11, 0.3);
     }
 
     @media (min-width: 520px) {
@@ -348,9 +344,9 @@ import { filter } from 'rxjs/operators';
     }
 
     .nav-cta-btn:hover {
-      background: linear-gradient(135deg, #0a4a27 0%, #0c743d 50%, #059669 100%);
+      background: linear-gradient(to bottom, #020d07, #134712);
       transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(14, 131, 69, 0.35);
+      box-shadow: 0 6px 16px rgba(3, 20, 11, 0.4);
     }
 
     .mobile-toggle {
@@ -550,13 +546,13 @@ import { filter } from 'rxjs/operators';
     }
 
     .mobile-contact-link {
-      background: linear-gradient(135deg, #072e18 0%, #0d4a27 50%, #16733d 100%) !important;
+      background: linear-gradient(to bottom, #03140B, #175616) !important;
       color: #ffffff !important;
       text-align: center;
       padding: 0.9rem !important;
       border-radius: 8px !important;
       font-weight: 700 !important;
-      box-shadow: 0 4px 14px rgba(14, 131, 69, 0.25);
+      box-shadow: 0 4px 14px rgba(3, 20, 11, 0.3);
       border: none !important;
       justify-content: center !important;
       gap: 0.5rem;

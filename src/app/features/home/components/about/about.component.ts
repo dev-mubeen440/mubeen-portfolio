@@ -9,7 +9,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
   imports: [CommonModule, SectionHeadingComponent],
   template: `
     <section id="about" class="about-section">
-      <div class="about-container">
+      <div class="about-container section-container">
         <app-section-heading
           [title]="aboutData.heading"
           eyebrow="Background & Values">
@@ -26,24 +26,24 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
               <div class="principle-item">
                 <span class="principle-num">01</span>
                 <div class="principle-body">
-                  <h4>Clean Code & Architecture</h4>
-                  <p>Writing organized, readable Laravel code following solid MVC conventions and separation of concerns.</p>
+                  <h4>Maintainable Architecture</h4>
+                  <p>Applying MVC architecture, OOP principles, and SOLID patterns to structure modular, readable, and reusable code with clear separation of concerns.</p>
                 </div>
               </div>
 
               <div class="principle-item">
                 <span class="principle-num">02</span>
                 <div class="principle-body">
-                  <h4>Reliable Databases</h4>
-                  <p>Designing sensible relational schemas in MySQL and writing optimized queries that scale smoothly.</p>
+                  <h4>Database Engineering</h4>
+                  <p>Designing structured relational schemas, modeling Eloquent relationships, and tuning database queries to ensure efficient data access and performance.</p>
                 </div>
               </div>
 
               <div class="principle-item">
                 <span class="principle-num">03</span>
                 <div class="principle-body">
-                  <h4>Consistent Delivery</h4>
-                  <p>Using Git branching, GitHub Actions CI/CD, and clear documentation to ship dependable updates.</p>
+                  <h4>Production Reliability</h4>
+                  <p>Building secure APIs, orchestrating background processing, and maintaining reliable CI/CD deployment workflows for dependable application stability.</p>
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
 
               <div class="snapshot-quote">
                 <span class="quote-mark">&ldquo;</span>
-                <p>I focus on building straightforward, dependable systems that deliver real value to the business and a smooth experience for users.</p>
+                <p>I focus on building maintainable software and practical business solutions that operate reliably in production.</p>
               </div>
             </div>
           </div>
@@ -75,19 +75,18 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
   `,
   styles: [`
     .about-section {
-      padding: 4.5rem 1.25rem;
+      padding: 4.5rem 0;
       border-top: 1px solid var(--color-border-subtle);
     }
 
     @media (min-width: 640px) {
       .about-section {
-        padding: 5rem 1.5rem;
+        padding: 5rem 0;
       }
     }
 
     .about-container {
-      max-width: var(--container-max-width);
-      margin: 0 auto;
+      width: 100%;
     }
 
     .about-layout {

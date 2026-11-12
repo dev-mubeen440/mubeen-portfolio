@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule],
   template: `
     <footer class="footer">
-      <div class="footer-container">
+      <div class="footer-container section-container">
         <!-- Top Row: Brand & Quick Action -->
         <div class="footer-header">
           <div class="footer-brand">
@@ -21,11 +21,11 @@ import { RouterModule } from '@angular/router';
                 height="42" />
               <div>
                 <span class="footer-name">Mubeen Aslam</span>
-                <span class="footer-role">Backend Engineer &middot; PHP &amp; Laravel</span>
+                <span class="footer-role">Software Engineer &middot; PHP &amp; Laravel</span>
               </div>
             </div>
             <p class="brand-tagline">
-              Software Engineer building reliable web applications, REST APIs, and database-driven solutions.
+              Software Engineer specializing in PHP and Laravel, building scalable web applications and reliable backend systems.
             </p>
           </div>
 
@@ -124,20 +124,19 @@ import { RouterModule } from '@angular/router';
     .footer {
       border-top: 1px solid var(--color-border-subtle);
       background: #ffffff;
-      padding: 3.5rem 1rem 2rem;
+      padding: 3.5rem 0 2rem;
       margin-top: 4.5rem;
     }
 
     @media (min-width: 640px) {
       .footer {
-        padding: 4.5rem 1.5rem 2.5rem;
+        padding: 4.5rem 0 2.5rem;
         margin-top: 6rem;
       }
     }
 
     .footer-container {
-      max-width: var(--container-max-width);
-      margin: 0 auto;
+      width: 100%;
     }
 
     /* Top Row */
@@ -225,22 +224,22 @@ import { RouterModule } from '@angular/router';
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      background: linear-gradient(135deg, #0d5c31 0%, #0e8345 50%, #10b981 100%);
+      background: linear-gradient(to bottom, #03140B, #175616);
       color: #ffffff !important;
       font-weight: 700;
       font-size: 0.88rem;
       padding: 0.75rem 1.35rem;
       border-radius: var(--radius-sm);
       text-decoration: none;
-      box-shadow: 0 4px 14px rgba(14, 131, 69, 0.25);
+      box-shadow: 0 4px 14px rgba(3, 20, 11, 0.3);
       transition: all var(--transition-fast);
       text-align: center;
     }
 
     .footer-cta-btn:hover {
-      background: linear-gradient(135deg, #0a4a27 0%, #0c743d 50%, #059669 100%);
+      background: linear-gradient(to bottom, #020d07, #134712);
       transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(14, 131, 69, 0.35);
+      box-shadow: 0 6px 18px rgba(3, 20, 11, 0.4);
     }
 
     .back-to-top {

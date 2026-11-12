@@ -60,8 +60,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.seo.updateSeo({
-      title: 'Mubeen Aslam — Software Engineer (PHP & Laravel)',
-      description: 'Software Engineer specializing in PHP, Laravel, high-throughput REST APIs, MySQL, and resilient backend systems based in Karachi, PK.',
+      title: 'Mubeen Aslam — Software Engineer | PHP & Laravel',
+      description: "Software Engineer specializing in PHP and Laravel, with hands-on experience developing production web applications, REST APIs, CRM systems, and database-driven platforms based in Karachi, Pakistan.",
       canonicalPath: '/'
     });
   }

@@ -9,7 +9,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
   imports: [CommonModule, SectionHeadingComponent],
   template: `
     <section id="education" class="education-section">
-      <div class="education-container">
+      <div class="education-container section-container">
         <app-section-heading
           title="Education"
           eyebrow="Academic Background"
@@ -36,19 +36,18 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
   `,
   styles: [`
     .education-section {
-      padding: 4.5rem 1.25rem;
+      padding: 4.5rem 0;
       border-top: 1px solid var(--color-border-subtle);
     }
 
     @media (min-width: 640px) {
       .education-section {
-        padding: 5.5rem 1.5rem;
+        padding: 5.5rem 0;
       }
     }
 
     .education-container {
-      max-width: var(--container-max-width);
-      margin: 0 auto;
+      width: 100%;
     }
 
     .education-grid {
@@ -93,7 +92,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
     }
 
     .primary-degree .card-edge {
-      background: linear-gradient(90deg, #0d5c31 0%, #0e8345 50%, #10b981 100%);
+      background: linear-gradient(to bottom, #03140B, #175616);
     }
 
     .card-content {

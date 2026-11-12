@@ -9,11 +9,11 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
   imports: [CommonModule, SectionHeadingComponent],
   template: `
     <section id="projects" class="projects-section">
-      <div class="projects-container">
+      <div class="projects-container section-container">
         <app-section-heading
           title="Featured Work"
           eyebrow="Portfolio & Case Studies"
-          description="A selection of production web applications, maritime management tools, and custom business platforms I have developed and maintained.">
+          description="A selection of production web applications, maritime operations tools, REST APIs, and business platforms I have developed and maintained.">
         </app-section-heading>
 
         <div class="projects-grid">
@@ -88,19 +88,18 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
   `,
   styles: [`
     .projects-section {
-      padding: 4.5rem 1.25rem;
+      padding: 4.5rem 0;
       border-top: 1px solid var(--color-border-subtle);
     }
 
     @media (min-width: 640px) {
       .projects-section {
-        padding: 5rem 1.5rem;
+        padding: 5rem 0;
       }
     }
 
     .projects-container {
-      max-width: var(--container-max-width);
-      margin: 0 auto;
+      width: 100%;
     }
 
     .projects-grid {

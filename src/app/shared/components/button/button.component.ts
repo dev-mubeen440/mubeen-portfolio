@@ -80,14 +80,14 @@ import { RouterModule } from '@angular/router';
 
     /* Primary Accent: Green Gradient */
     .btn-primary {
-      background: linear-gradient(135deg, #0d5c31 0%, #0e8345 50%, #10b981 100%);
+      background: linear-gradient(to bottom, #03140B, #175616);
       color: #ffffff !important;
-      box-shadow: 0 4px 14px rgba(14, 131, 69, 0.28);
+      box-shadow: 0 4px 14px rgba(3, 20, 11, 0.35);
     }
     .btn-primary:hover {
-      background: linear-gradient(135deg, #0a4a27 0%, #0c743d 50%, #059669 100%);
+      background: linear-gradient(to bottom, #020d07, #134712);
       transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(14, 131, 69, 0.38);
+      box-shadow: 0 6px 20px rgba(3, 20, 11, 0.45);
     }
 
     /* Secondary / Clean White surface with 1px border */

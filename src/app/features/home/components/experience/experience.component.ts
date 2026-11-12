@@ -9,7 +9,7 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
   imports: [CommonModule, SectionHeadingComponent],
   template: `
     <section id="experience" class="experience-section">
-      <div class="experience-container">
+      <div class="experience-container section-container">
         <app-section-heading
           title="Work Experience"
           eyebrow="Career History"
@@ -63,20 +63,19 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
   `,
   styles: [`
     .experience-section {
-      padding: 4.5rem 1.25rem;
+      padding: 4.5rem 0;
       border-top: 1px solid var(--color-border-subtle);
       background: #fafcfb;
     }
 
     @media (min-width: 640px) {
       .experience-section {
-        padding: 5rem 1.5rem;
+        padding: 5rem 0;
       }
     }
 
     .experience-container {
-      max-width: var(--container-max-width);
-      margin: 0 auto;
+      width: 100%;
     }
 
     .timeline {
@@ -139,11 +138,11 @@ import { SectionHeadingComponent } from '../../../../shared/components/section-h
       font-size: 0.74rem;
       font-weight: 600;
       color: #ffffff;
-      background: linear-gradient(135deg, #0d5c31 0%, #0e8345 100%);
+      background: linear-gradient(to bottom, #03140B, #175616);
       padding: 0.25rem 0.65rem;
       border-radius: 999px;
       width: fit-content;
-      box-shadow: 0 2px 8px rgba(14, 131, 69, 0.25);
+      box-shadow: 0 2px 8px rgba(3, 20, 11, 0.3);
     }
 
     /* Center Axis */
