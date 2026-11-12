@@ -144,12 +144,12 @@ import gsap from 'gsap';
               </div>
               <div class="footer-cell">
                 <span class="fc-label">Experience</span>
-                <span class="fc-value">2+ years</span>
-                <span class="fc-sub">3 companies</span>
+                <span class="fc-value">3+ years</span>
+                <!-- <span class="fc-sub">3 companies</span> -->
               </div>
               <div class="footer-cell">
                 <span class="fc-label">Deliveries</span>
-                <span class="fc-value">5+ live sites</span>
+                <span class="fc-value">5+ Live Projects</span>
                 <span class="fc-sub">APIs &middot; CRMs &middot; CMS</span>
               </div>
             </div>
